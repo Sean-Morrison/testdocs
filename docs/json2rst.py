@@ -15,7 +15,7 @@ def main():
     with open('doc.json', 'r') as infile:
         data = json.load(infile)
 
-    with open('doc.rst', 'w') as out:
+    with open('sphinx/doc.rst', 'w') as out:
         out.write(header)
         for cmd in data['cmd']:
             out.write(mask.format(fmt = '^'*len(cmd['name']), **cmd))
