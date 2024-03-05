@@ -2,8 +2,7 @@
 
 IDLspec2D: The SDSS BOSS Data Reduction Pipeline
 ====================
-This page describes the BOSS Data Reduction Pipeline `idlspec2d <https://github.com/sdss/idlspec2d>`.
-
+This page describes the BOSS Data Reduction Pipeline `idlspec2d <https://github.com/sdss/idlspec2d>`_.
 
 The BOSS DRP (officially known as IDLspec2D) is really a series of steps run in sequence. There are some initial steps to produce the plans and supplementary information required. After which, uubatchpbs is used to produce the redux scripts. These scripts are really a wrapper script designed to run each of the individual steps on a field-mjd basis by the slurm manager at CHPC (Utah) or manually on any computer. Starting with the v6_2_x version of the pipeline, the internal python commands have been organized into a boss_drp package within the IDLspec2D GitHub repo.
 
@@ -78,40 +77,33 @@ Dependencies
 * idl
 * python(3.7-3.9)
 * SDSS Collaboration Package Dependencies
-    * idlutils: idlutils is a collection of IDL functions and routines used by a variety of SDSS software.
-    * sdssdb: sdssdb contains the source catalogs, targeting catalogs, and operational databases.
-    * semaphore: provides codes and reference files to decode and understand the sdss_target_flags
-    * sdss-tree: provides environment variables to manage paths for SDSS data as they organized on the Science Archive Server (SAS)
-    * sdss_access: provides a convenient way of navigating local and remote file system paths from the Science Archive Server (SAS)
-    * pyVista:
-    * SDSS Slurm: Required for use of uurundaily at Utah, all other command can be manually (at Utah or elsewhere) run without access to the slurm manager provided by this package
-    * SDSS Product Dependencies
-    * elodie: A database of high and medium-resolution stellar spectra (Prugniel+, 2001) used by spec1d to classify spectra and determine stellar parameters.
-    * dust: A catalog of dust extinction models, including the SFD model.
-    * speclog: speclog is an SDSS product that contains information about SDSS BOSS plate operations including seeing measured by the guides (guiderMon-{MJD}.par, plate plug maps (plPlugMapM-{plateid}-{mjd}-{plugid}.par, and plate header correction files to change the header exposure values (sdHdrFix-{mjd}.par)
-    * platelist: platelist is an SDSS product that contains information on the plate designs and plugging. The plateHoles files include additional metadata associated with the targets on a plate
-    * specflat: specflat is an SDSS product that contains master calibration frames and bad pixel masks for use in the idlspec2d pipeline.
-    * gaia/dr2: idlspec2d utilizes gaia_source/csv to calculate the distance to standard stars from GAIA DR2 proper motion.
+    * `idlutils <https://github.com/sdss/idlutils>`_: idlutils is a collection of IDL functions and routines used by a variety of SDSS software.
+    * `sdssdb <https://github.com/sdss/sdssdb/>`_: sdssdb contains the source catalogs, targeting catalogs, and operational databases.
+    * `semaphore <https://github.com/sdss/semaphore>`_: provides codes and reference files to decode and understand the sdss_target_flags
+    * `sdss-tree <https://github.com/sdss/tree>`_: provides environment variables to manage paths for SDSS data as they organized on the Science Archive Server (SAS)
+    * `sdss_access <https://github.com/sdss/sdss_access>`_: provides a convenient way of navigating local and remote file system paths from the Science Archive Server (SAS)
+    * `pyVista <https://github.com/holtzmanjon/pyvista>`_:
+    * `SDSS Slurm <https://github.com/sdss/slurm>`_: Required for use of uurundaily at Utah, all other command can be manually (at Utah or elsewhere) run without access to the slurm manager provided by this package
+    * `SDSS Product Dependencies
+    * `elodie <https://svn.sdss.org/public/data/eboss/elodie/>`_: A database of high and medium-resolution stellar spectra (Prugniel+, 2001) used by spec1d to classify spectra and determine stellar parameters.
+    * `dust <https://svn.sdss.org/public/data/sdss/catalogs/dust/>`_: A catalog of dust extinction models, including the SFD model.
+    * `speclog <https://svn.sdss.org/public/data/sdss/speclog/trunk/>`_: speclog is an SDSS product that contains information about SDSS BOSS plate operations including seeing measured by the guides (guiderMon-{MJD}.par, plate plug maps (plPlugMapM-{plateid}-{mjd}-{plugid}.par, and plate header correction files to change the header exposure values (sdHdrFix-{mjd}.par)
+    * `platelist <https://svn.sdss.org/public/data/sdss/platelist/trunk/>`_: platelist is an SDSS product that contains information on the plate designs and plugging. The plateHoles files include additional metadata associated with the targets on a plate
+    * `specflat <https://svn.sdss.org/public/data/sdss/specflat/>`_: specflat is an SDSS product that contains master calibration frames and bad pixel masks for use in the idlspec2d pipeline.
+    * `gaia/dr2 <https://cdn.gea.esac.esa.int/Gaia/gdr2/>`_: idlspec2d utilizes gaia_source/csv to calculate the distance to standard stars from GAIA DR2 proper motion.
 * External Dependencies
-    * pyDL: a package that consists of python replacements for IDL function, both built-in and from external astronomical libraries
-    * dustmaps: provides a unified interface for several 2D and 3D maps of interstellar dust reddening and extinction. idlspec2d makes use of the Bayestar 2015 dustmaps (Green, Schlafly, Finkbeiner et al. 2015)
-    * PyXCSAO: a python package designed to replicate the functionality of IRAF XCSAO.
-    * numpy: a standard Python package for arrays and high-level mathematical functions
-    * astropy: a collection of astronomy packages written in Python
-    * matplotlib: a python plotting library
-    * healpy: a Python package based on the Hierarchical Equal Area isoLatitude Pixelization (HEALPix) scheme
-    * tqdm: a progress bar for Python
-    * pandas: a python package designed for data manipulation and analysis
-    * h5py: a python interface between numpy and HDF5 data
-    * scipy: a python package for scientific and technical computing
-    * pillow: a python image file processing library
-    * termcolor: a python package for color formatting of terminal outputs (not required but recommended)
+    * `pyDL <https://pydl.readthedocs.io/en/latest/index.html>`_: a package that consists of python replacements for IDL function, both built-in and from external astronomical libraries
+    * `dustmaps <https://github.com/gregreen/dustmaps>`_: provides a unified interface for several 2D and 3D maps of interstellar dust reddening and extinction. idlspec2d makes use of the Bayestar 2015 dustmaps (`Green, Schlafly, Finkbeiner et al. 2015 <https://ui.adsabs.harvard.edu/abs/2015ApJ...810...25G>`_)
+    * `PyXCSAO <https://github.com/mkounkel/pyxcsao>`_: a python package designed to replicate the functionality of `IRAF XCSAO <http://tdc-www.harvard.edu/iraf/rvsao/xcsao/xcsao.html>`_.
+    * `numpy <https://numpy.org/>`_: a standard Python package for arrays and high-level mathematical functions
+    * `astropy <https://www.astropy.org/>`_: a collection of astronomy packages written in Python
+    * `matplotlib <https://matplotlib.org/>`_: a python plotting library
+    * `healpy <https://healpy.readthedocs.io/en/latest/>`_: a Python package based on the Hierarchical Equal Area isoLatitude Pixelization (HEALPix) scheme
+    * `tqdm <https://tqdm.github.io/>`_: a progress bar for Python
+    * `pandas <https://pandas.pydata.org/>`_: a python package designed for data manipulation and analysis
+    * `h5py <https://www.h5py.org/>`_: a python interface between numpy and HDF5 data
+    * `scipy <https://scipy.org/>`_: a python package for scientific and technical computing
+    * `pillow <https://pillow.readthedocs.io/en/stable/index.html>`_: a python image file processing library
+    * `termcolor <https://pypi.org/project/termcolor/>`_: a python package for color formatting of terminal outputs (not required but recommended)
 
 
-
-.. toctree::
-    :hidden:
-
-    v1/v1
-    standards
-    changelog
