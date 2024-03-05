@@ -2,7 +2,6 @@ Full Command Documention
 ========================
 
 BOSS_log
-
 ^^^^^^^^
  usage: BOSS_log [-h] [-m MJD] [-y] [-o {apo,lco}] [-l] [--new_ref] [-c] [-r]
                 [-e] [-s]
@@ -26,7 +25,6 @@ optional arguments:
   -e, --hide_error      Hide SOS Error and Workings
   -s, --hide_summary    Hide data summary table
 SOS
-
 ^^^
  usage: SOS [-h] (-r | -b | -j) (-c | -t | -d) [-e EXP] [-m [MJD [MJD ...]]]
            [--nodb] [--no_gz] [--no_reject] [--clobber_fibermap]
@@ -60,14 +58,12 @@ optional arguments:
   -v, --verbose         prints the only (or red if joint) active SOS process
                         to terminal
 boss_arcs_to_traces
-
 ^^^^^^^^^^^^^^^^^^^
  Traceback (most recent call last):
   File "/uufs/chpc.utah.edu/common/home/u6037107/idlspec2d/cleanup/python/boss_drp/../../bin/boss_arcs_to_traces", line 7, in <module>
     from pyvista import boss
 ModuleNotFoundError: No module named 'pyvista'
 build_combined_html
-
 ^^^^^^^^^^^^^^^^^^^
  usage: build_combined_html [-h] [--force] sosdir
 
@@ -80,12 +76,10 @@ optional arguments:
   -h, --help  show this help message and exit
   --force     Force update
 cronrun.bash
-
 ^^^^^^^^^^^^
  usage: cronrun.bash module 'script'
  
 fieldlist
-
 ^^^^^^^^^
  usage: fieldlist [-h] [--create] [--topdir TOPDIR]
                  [--run1d [RUN1D [RUN1D ...]]] [--run2d [RUN2D [RUN2D ...]]]
@@ -115,7 +109,6 @@ optional arguments:
                         and prints standard python errors
   --noplot              Skips updating the sky plots
 fieldmerge
-
 ^^^^^^^^^^
  usage: fieldmerge [-h] [--run2d RUN2D] [--indir INDIR] [--skip_line]
                   [--include_bad] [--legacy] [--skip_specprimary] [--lite]
@@ -170,7 +163,6 @@ optional arguments:
                         save
   --ndays MJDSTART      Limit update to last ndays
 filecheck
-
 ^^^^^^^^^
  usage: filecheck [-h] cmd file
 
@@ -204,7 +196,6 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 fluxcorr_prior
-
 ^^^^^^^^^^^^^^
  usage: fluxcorr_prior [-h] [--xythrucorr] planfile
 
@@ -217,12 +208,10 @@ optional arguments:
   -h, --help    show this help message and exit
   --xythrucorr
 idlspec2d_version
-
 ^^^^^^^^^^^^^^^^^
  usage: idlspec2d_version
  
 loadSN2Value
-
 ^^^^^^^^^^^^
  usage: loadSN2Value [-h] [-v] [-u] [--sdssv_sn2] fits confSum
 
@@ -239,7 +228,6 @@ optional arguments:
                  processed, unless set)
   --sdssv_sn2    sdssv_sn2
 manage_coadd_Schema
-
 ^^^^^^^^^^^^^^^^^^^
  usage: manage_coadd_Schema [-h] [--coaddfile COADDFILE] [--topdir TOPDIR]
                            [--run2d RUN2D] [--name NAME] [--DR] [--rerun1d]
@@ -281,7 +269,6 @@ optional arguments:
   --mjd [MJD [MJD ...]]
                         Use data from these MJDs.
 read_sos
-
 ^^^^^^^^
  usage: read_sos [-h] [--exp EXP] [--nocopy] directory mjd
 
@@ -296,7 +283,6 @@ optional arguments:
   --exp EXP, -e EXP  Exposure Name
   --nocopy, -n       Prevent copy to combined Directory
 readfibermaps
-
 ^^^^^^^^^^^^^
  usage: readfibermaps [-h] [-p SPPLAN2D] [--topdir TOPDIR] [-c] [--fast]
                      [--datamodel DATAMODEL] [-s] [--release RELEASE]
@@ -336,7 +322,6 @@ SOS:
   --mjd MJD             MJD of observation
   --log                 creates log file in topdir
 run_PyXCSAO
-
 ^^^^^^^^^^^
  usage: run_PyXCSAO [-h] [--run1d RUN1D] [--epoch] fitsfile
 
@@ -351,7 +336,6 @@ optional arguments:
                         run1d name
   --epoch               run for epoch Coadds
 sdR_hdrfix
-
 ^^^^^^^^^^
  usage: sdR_hdrfix [-h] [--mjd MJD] [--obs {APO,LCO}] [--clobber]
                   [--cameras {b1,b2,r1,r2,??}] [--bad] [--test]
@@ -435,7 +419,6 @@ Manually update a key
 
 one or more update options are required
 slurm_fieldmerge
-
 ^^^^^^^^^^^^^^^^
  usage: slurm_fieldmerge [-h] [--module MODULE] [--walltime WALLTIME] [--fast]
                         [--mem MEM] [--daily]
@@ -454,7 +437,6 @@ optional arguments:
   --mem MEM             memory in bytes
   --daily               only run if daily run has been run today
 slurm_readfibermap
-
 ^^^^^^^^^^^^^^^^^^
  usage: slurm_readfibermap [-h] [--module MODULE] [--topdir TOPDIR]
                           [--run2d RUN2D] [--clobber] [--apo] [--lco] [--dr19]
@@ -488,7 +470,6 @@ Slurm Options:
   --walltime WALLTIME   Wall time in hours
   --ppn PPN             Number of processors per node
 slurm_sos
-
 ^^^^^^^^^
  usage: slurm_sos [-h] [--apo] [--lco] [--mjd [MJD [MJD ...]]]
                  [--mjdstart MJDSTART] [--mjdend MJDEND] [--no_reject]
@@ -529,7 +510,6 @@ Slurm Options:
   --ppn PPN             Number of processors per node
   --no_submit           Skip submitting process to queue
 slurm_spTrace
-
 ^^^^^^^^^^^^^
  usage: slurm_spTrace [-h] [--module MODULE] [--topdir TOPDIR] [--run2d RUN2D]
                      [--mjd [MJD [MJD ...]]] [--mjdstart MJDSTART]
@@ -553,7 +533,6 @@ optional arguments:
   --debug
   --skip_plan
 sos_command
-
 ^^^^^^^^^^^
  usage: sos_command -f name -i path -p name -l path -s path -m 00000 [-d -e]
  
@@ -573,7 +552,6 @@ sos_command
 All parameters except -d, -a, and -e are required, FPS mode is set by default.
 Normally sos_command will be called by sos_runnerd.
 spSpec_reformat
-
 ^^^^^^^^^^^^^^^
  usage: spSpec_reformat [-h] --field FIELD --mjd MJD [--topdir TOPDIR]
                        [--run2d RUN2D] [--run1d RUN1D] [--custom CUSTOM]
@@ -596,7 +574,6 @@ optional arguments:
   --lsdr10              Include Legacy Survey DR10 links on HTML
   --allsky              Include Legacy Survey DR10 links on HTML
 spplan
-
 ^^^^^^
  usage: spplan [-h] [--skip2d] [--skip1d] [--module MODULE] [--topdir TOPDIR]
               [--run2d RUN2D] [--lco] [--logfile LOGFILE] [--verbose VERBOSE]
@@ -669,7 +646,6 @@ RUN1D:
   --plate_epoch         Use a variable max epoch length for plate coadd
   --quick               Use the list of new spPlan2d as a filter for fields
 spplan_epoch
-
 ^^^^^^^^^^^^
  usage: spplan_epoch [-h] [--module MODULE] [--topdir TOPDIR] [--run2d RUN2D]
                     [--run1d RUN1D] [--mjd MJD] [--mjdstart MJDSTART]
@@ -717,7 +693,6 @@ optional arguments:
                         access.readthedocs.io/en/latest/auth.html#auth
   --remote              allow for remote access to data using sdss-access
 spplan_target
-
 ^^^^^^^^^^^^^
  usage: spplan_target [-h] (--manual | --batch) [--module MODULE] [--name NAME]
                      [--coaddfile COADDFILE] [--topdir TOPDIR] [--run2d RUN2D]
@@ -769,7 +744,6 @@ optional arguments:
                         flag (if not use_firstcarton)
   --lco                 Create Plans for LCO
 spplan_trace
-
 ^^^^^^^^^^^^
  usage: spplan_trace [-h] [--module MODULE] [--topdir TOPDIR] [--run2d RUN2D]
                     [--lco] [--logfile LOGFILE] [--verbose VERBOSE] [-c]
@@ -811,7 +785,6 @@ MJD/Field Filtering:
   --fps                 Include FPS Fields
   --sdssv               Include both SDSS-V Fields & Plates
 sxpar.py
-
 ^^^^^^^^
  usage: sxpar.py [-h] [-v] fitsfile keyword
 
@@ -825,7 +798,6 @@ optional arguments:
   -h, --help     show this help message and exit
   -v, --verbose  verbose
 sxpar_retry.py
-
 ^^^^^^^^^^^^^^
  usage: sxpar_retry.py [-h] [-v] fitsfile keyword
 
@@ -839,7 +811,6 @@ optional arguments:
   -h, --help     show this help message and exit
   -v, --verbose  verbose
 update_flags
-
 ^^^^^^^^^^^^
  usage: update_flags [-h] [--run2d RUN2D] [--topdir TOPDIR] [--clobber]
                     [--custom [CUSTOM [CUSTOM ...]]] [--nobackup]
@@ -855,7 +826,6 @@ optional arguments:
                         List of name of custom coadd schema
   --nobackup            Skip backup of existing
 uubatchpbs
-
 ^^^^^^^^^^
  usage: uubatchpbs [-h] [--sdssv] [--sdssv_fast] [--sdssv_noshare] [--apo]
                   [--lco] [--bay15] [--merge3d] [--obs [OBS [OBS ...]]]
@@ -963,7 +933,6 @@ Custom Coadd Options:
 Email outputs:
   --email               Email log using $HOME/daily/etc/emails
 uurundaily
-
 ^^^^^^^^^^
  usage: uurundaily [-h] [--apo] [--lco] [--module MODULE]
                   [--mjd [MJD [MJD ...]]] [--range_mjd RANGE_MJD] [--clobber]

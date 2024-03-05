@@ -48,9 +48,9 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'SDSS Python Template'
-copyright = u'2017, SDSS Collaboration'
-author = u'José Sánchez-Gallego et al.'
+project = u'IDLSPEC2D'
+copyright = u'2024, SDSS Collaboration'
+author = u'Sean Morrison et al.'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -100,7 +100,7 @@ pygments_style = 'sphinx'
 # keep_warnings = False
 
 # Intersphinx mappings
-intersphinx_mapping = {'python': ('https://docs.python.org/3.6', None),
+intersphinx_mapping = {'python': ('https://docs.python.org/3.11', None),
                        'astropy': ('http://docs.astropy.org/en/latest', None),
                        'numpy': ('http://docs.scipy.org/doc/numpy/', None),
                        'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None)}
@@ -111,7 +111,7 @@ napoleon_use_rtype = False
 napoleon_use_ivar = True
 
 # Github repo
-issues_github_path = 'sdss/python_template'
+issues_github_path = 'sdss/idlspec2d'
 
 rst_epilog = """
 .. |numpy_array| replace:: Numpy array
@@ -130,7 +130,7 @@ html_theme = 'bootstrap'
 # documentation.
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "SDSS Python Template",
+    'navbar_title': "IDLSPEC2D",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Site",
