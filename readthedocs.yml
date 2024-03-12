@@ -4,7 +4,7 @@ build:
         python: "3.12"
     jobs:
         pre_build:
-          - python ./docs/sphinx/json2rst.py
+          - python ./docs/build_doc.py
 
 python:
     install:
