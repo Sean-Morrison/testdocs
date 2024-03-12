@@ -9,4 +9,4 @@ requirements_file: docs/sphinx/requirements_template_docs.txt
 
 # Don't build any extra formats
 formats:
-    - none
+    - pdf
