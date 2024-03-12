@@ -16,9 +16,9 @@ try:
 except:
     file_path = ptt.realpath(__file__)
     print(file_path)
-    bindir = ptt.join(ptt.basename(file_path),'bin/')
-    prodir = ptt.join(ptt.basename(file_path),'pro/')
-    docdir = ptt.join(ptt.basename(file_path),'docs/sphinx/')
+    bindir = ptt.join(ptt.dirname(file_path),'bin/')
+    prodir = ptt.join(ptt.dirname(file_path),'pro/')
+    docdir = ptt.join(ptt.dirname(file_path),'docs/sphinx/')
 
 
 def headline(text, adorn='='):
