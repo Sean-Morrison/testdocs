@@ -4,8 +4,8 @@ build:
         python: "3.12"
     jobs:
         pre_build:
-          - export $PYTHONPATH
-          - export PYTHONPATH=$PYTHONPATH:./PYTHONPATH ; python ./docs/build_doc.py
+          - echo $PYTHONPATH
+          - export PYTHONPATH=$PYTHONPATH:./PYTHONPATH ; echo $PYTHONPATH; python ./docs/build_doc.py
 
 python:
   install:
