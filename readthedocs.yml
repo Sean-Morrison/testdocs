@@ -3,7 +3,9 @@ build:
     tools:
         python: "3.12"
 
-#python:
+python:
+    install:
+    - requirements: docs/sphinx/requirements.txt
 #    version: "3.12"
 #    setup_py_install: false
 
