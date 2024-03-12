@@ -20,7 +20,7 @@ try:
     from boss_drp import __version__
 except ModuleNotFoundError:
     from sdsstools import get_package_version
-    __version__ = get_package_version(__file__, 'boss_drp') or 'dev'
+    __version__ = get_package_version(__file__, 'testdocs') or 'dev'
 
 
 # Are we building in RTD?
@@ -85,11 +85,13 @@ author = author+' and SDSS-I,-II,-III,-IV IDLSPEC2D Pipeline Teams'
 try:
     version = parse_version(__version__).base_version
 except:
-    if __version__ == 'v':
-        version = 'v'+parse_version(version.replace('_','.')).base_version.replace('.','_')
-    else:
-        version = parse_version(version.replace('_','.')).base_version.replace('.','_')
-version = __version__
+    try:
+        if __version__[0] == 'v':
+            version = 'v'+parse_version(__version__.replace('_','.')).base_version.replace('.','_')
+        else:
+            version = parse_version(__version__.replace('_','.')).base_version.replace('.','_')
+    except:
+        version = __version__
 # The full version, including alpha/beta/rc tags.
 release = __version__
 
