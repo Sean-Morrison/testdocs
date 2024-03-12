@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "idlspec2d"
+name = "boss_drp"
 version = "v6_2_0beta"
 description = "SDSS BOSS Data Reduction Pipeline"
 authors = ["Sean Morrison <smorris0@illinois.edu>"]
