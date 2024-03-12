@@ -15,11 +15,13 @@ def main():
     try:
         with open('../doc.json', 'r') as infile:
             data = json.load(infile)
+        out = 'doc.rst'
     except:
         with open('./docs/doc.json', 'r') as infile:
             data = json.load(infile)
+        out = './docs/sphinx/doc.rst'
 
-    with open('doc.rst', 'w') as out:
+    with open(out, 'w') as out:
         out.write(':tocdepth: 2\n\n')
         out.write('.. highlight:: none\n\n')
         out.write(header)
