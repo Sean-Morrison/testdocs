@@ -1,0 +1,3 @@
+[tool.poetry]
+name = "testdocs"
+version = "v6_2_0beta"
