@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+from pkg_resources import resource_filename
 import glob
 import subprocess
 import os.path as ptt
@@ -8,17 +9,10 @@ import argparse
 import sys
 import time
 
-try:
-    from pkg_resources import resource_filename
-    bindir = resource_filename('testdocs','../../bin/')
-    prodir = resource_filename('testdocs','../../pro/')
-    docdir = resource_filename('testdocs','../../docs/sphinx/')
-except:
-    file_path = ptt.realpath(__file__)
-    print(file_path)
-    bindir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'bin/')
-    prodir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'pro/')
-    docdir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'docs/sphinx/')
+bindir = resource_filename('boss_drp','../../bin/')
+prodir = resource_filename('boss_drp','../../pro/')
+docdir = resource_filename('boss_drp','../../docs/sphinx/')
+
 
 mask = '\n.. _{name}:\n\n{name}\n{fmt}\n::\n \n    {doc}\n'
 
@@ -88,10 +82,10 @@ def build_docs():
         out.write(headline('Full Command Documention') + '\n')
         
         sec_hdr ='Full Bash and Python Command Usage'
-        out = sec(out, sec_hdr, docs['cmd'], 'bin')
+        out = sec(out, sec_hdr, data['cmd'], 'bin')
 
         sec_hdr ='IDL Command Usage'
-        out = sec(out, sec_hdr, docs['idl'], 'idl')
+        out = sec(out, sec_hdr, data['idl'], 'idl')
 
         out.write('\n.. highlight:: defaults\n\n')
 

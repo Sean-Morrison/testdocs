@@ -1,0 +1,1683 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Pipeline Dependencies" href="Dependencies.html" />
+
+    <link rel="shortcut icon" href="_static/favicon_sdssv.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
+        <title>Full Command Documention - IDLSPEC2D&#39;s Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=99aaee5e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">IDLSPEC2D's Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/sdssv_logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">IDLSPEC2D's Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">IDLspec2D: The SDSS BOSS Data Reduction Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catchup.html">Running the BOSS DRP Catchup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daily.html">Running the BOSS DRP Daily</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sos.html">Son-of-spectro (SOS): The BOSS on Mountain Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dependencies.html">Pipeline Dependencies</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Full Command Documention</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="full-command-documention">
+<h1>Full Command Documention<a class="headerlink" href="#full-command-documention" title="Permalink to this heading">#</a></h1>
+<section id="full-bash-and-python-command-usage">
+<h2>Full Bash and Python Command Usage<a class="headerlink" href="#full-bash-and-python-command-usage" title="Permalink to this heading">#</a></h2>
+<nav class="contents this-will-duplicate-information-and-it-is-still-useful-here local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#boss-log" id="id38">BOSS_log</a></p></li>
+<li><p><a class="reference internal" href="#sos" id="id39">SOS</a></p></li>
+<li><p><a class="reference internal" href="#boss-arcs-to-traces" id="id40">boss_arcs_to_traces</a></p></li>
+<li><p><a class="reference internal" href="#build-combined-html" id="id41">build_combined_html</a></p></li>
+<li><p><a class="reference internal" href="#cronrun-bash" id="id42">cronrun.bash</a></p></li>
+<li><p><a class="reference internal" href="#fieldlist" id="id43">fieldlist</a></p></li>
+<li><p><a class="reference internal" href="#fieldmerge" id="id44">fieldmerge</a></p></li>
+<li><p><a class="reference internal" href="#filecheck" id="id45">filecheck</a></p></li>
+<li><p><a class="reference internal" href="#fluxcorr-prior" id="id46">fluxcorr_prior</a></p></li>
+<li><p><a class="reference internal" href="#idlspec2d-version" id="id47">idlspec2d_version</a></p></li>
+<li><p><a class="reference internal" href="#loadsn2value" id="id48">loadSN2Value</a></p></li>
+<li><p><a class="reference internal" href="#manage-coadd-schema" id="id49">manage_coadd_Schema</a></p></li>
+<li><p><a class="reference internal" href="#read-sos" id="id50">read_sos</a></p></li>
+<li><p><a class="reference internal" href="#readfibermaps" id="id51">readfibermaps</a></p></li>
+<li><p><a class="reference internal" href="#run-pyxcsao" id="id52">run_PyXCSAO</a></p></li>
+<li><p><a class="reference internal" href="#sdr-hdrfix" id="id53">sdR_hdrfix</a></p></li>
+<li><p><a class="reference internal" href="#slurm-fieldmerge" id="id54">slurm_fieldmerge</a></p></li>
+<li><p><a class="reference internal" href="#slurm-readfibermap" id="id55">slurm_readfibermap</a></p></li>
+<li><p><a class="reference internal" href="#slurm-sos" id="id56">slurm_sos</a></p></li>
+<li><p><a class="reference internal" href="#slurm-sptrace" id="id57">slurm_spTrace</a></p></li>
+<li><p><a class="reference internal" href="#sos-command" id="id58">sos_command</a></p></li>
+<li><p><a class="reference internal" href="#spspec-reformat" id="id59">spSpec_reformat</a></p></li>
+<li><p><a class="reference internal" href="#spplan" id="id60">spplan</a></p></li>
+<li><p><a class="reference internal" href="#spplan-epoch" id="id61">spplan_epoch</a></p></li>
+<li><p><a class="reference internal" href="#spplan-target" id="id62">spplan_target</a></p></li>
+<li><p><a class="reference internal" href="#spplan-trace" id="id63">spplan_trace</a></p></li>
+<li><p><a class="reference internal" href="#sxpar-py" id="id64">sxpar.py</a></p></li>
+<li><p><a class="reference internal" href="#sxpar-retry-py" id="id65">sxpar_retry.py</a></p></li>
+<li><p><a class="reference internal" href="#update-flags" id="id66">update_flags</a></p></li>
+<li><p><a class="reference internal" href="#uubatchpbs" id="id67">uubatchpbs</a></p></li>
+<li><p><a class="reference internal" href="#uurundaily" id="id68">uurundaily</a></p></li>
+</ul>
+</nav>
+<section id="boss-log">
+<span id="id1"></span><h3>BOSS_log<a class="headerlink" href="#boss-log" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: BOSS_log [-h] [-m MJD] [-y] [-o {apo,lco}] [-l] [--new_ref] [-c] [-r]
+                [-e] [-s]
+
+Build BOSS Exposure Log
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m MJD, --mjd MJD     MJD
+  -y, --yesterday       current mjd-1
+  -o {apo,lco}, --observatory {apo,lco}, --obs {apo,lco}
+                        Manually set observatory
+  -l, --long            Long/detailed version of log
+  --new_ref             Calculate new reference values in fratio and w_shift
+                        and show in place of fratio and w_shift (edit to code
+                        to save new value is required)
+  -c, --hide_hart, --hide_hartmann
+                        Hide cleaned version of Hartmann Logs as a table
+  -r, --hart_raw        Print raw form (instead of table form) of Hartmann
+                        Logs
+  -e, --hide_error      Hide SOS Error and Workings
+  -s, --hide_summary    Hide data summary table
+</pre></div>
+</div>
+</section>
+<section id="sos">
+<span id="id2"></span><h3>SOS<a class="headerlink" href="#sos" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: SOS [-h] (-r | -b | -j) (-c | -t | -d) [-e EXP] [-m [MJD [MJD ...]]]
+           [--nodb] [--no_gz] [--no_reject] [--clobber_fibermap]
+           [--no_sdssv_sn2] [-n] [-o] [-v]
+
+SOS process for reducing BOSS data on the Moutain
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r, --red             Red Camera Process
+  -b, --blue            Blue Camera Process
+  -j, --joint           Both Camera Processes
+  -c, --catchup         Run Catchup on the night or (MJD)
+  -t, --redoMode        Save outputs of MJD or exposure to sosredo
+  -d, --test            Save outputs and logs to sosredo/dev
+  -e EXP, --exp EXP     exposure id (or range of exp id 500-510) (with or
+                        without leading zeros)
+  -m [MJD [MJD ...]], --mjd [MJD [MJD ...]]
+                        MJD
+  --nodb                skip opsdb load
+  --no_gz               Overrides the requirement for &#39;.gz&#39; compressed files
+                        (experimental)
+  --no_reject           Overrides the Calibration rejection (use with caution)
+  --clobber_fibermap, -f
+                        Clobbers the existing spfibermap files
+  --no_sdssv_sn2        Skip reporting a second set of SN2 values with updated
+                        fit parameters
+  -n, --no_arc2trace    Skip Utilizing arc2trace refinements
+  -o, --forcea2t        Force arc2trace for all fields (even if flat exists
+                        for field)
+  -v, --verbose         prints the only (or red if joint) active SOS process
+                        to terminal
+</pre></div>
+</div>
+</section>
+<section id="boss-arcs-to-traces">
+<span id="id3"></span><h3>boss_arcs_to_traces<a class="headerlink" href="#boss-arcs-to-traces" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/uufs/chpc.utah.edu/common/home/u6037107/idlspec2d/cleanup/python/boss_drp/../../bin/boss_arcs_to_traces&quot;, line 7, in &lt;module&gt;
+    from pyvista import boss
+ModuleNotFoundError: No module named &#39;pyvista&#39;
+</pre></div>
+</div>
+</section>
+<section id="build-combined-html">
+<span id="id4"></span><h3>build_combined_html<a class="headerlink" href="#build-combined-html" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: build_combined_html [-h] [--force] sosdir
+
+build SOS combine index page
+
+positional arguments:
+  sosdir      Base SOS output directory
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --force     Force update
+</pre></div>
+</div>
+</section>
+<section id="cronrun-bash">
+<span id="id5"></span><h3>cronrun.bash<a class="headerlink" href="#cronrun-bash" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: cronrun.bash module &#39;script&#39;
+</pre></div>
+</div>
+</section>
+<section id="fieldlist">
+<span id="id6"></span><h3>fieldlist<a class="headerlink" href="#fieldlist" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: fieldlist [-h] [--create] [--topdir TOPDIR]
+                 [--run1d [RUN1D [RUN1D ...]]] [--run2d [RUN2D [RUN2D ...]]]
+                 [--outdir OUTDIR] [--skipcart [SKIPCART [SKIPCART ...]]]
+                 [--epoch] [--basehtml BASEHTML] [--logfile LOGFILE] [--debug]
+                 [--noplot]
+
+Build/load BOSS Fieldlist
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --create, -c          Create Fieldlist
+  --topdir TOPDIR       Optional override value for the environment variable
+                        $BOSS_SPECTRO_REDUX
+  --run1d [RUN1D [RUN1D ...]]
+                        Optional override value for the enviro variable $RUN1D
+  --run2d [RUN2D [RUN2D ...]]
+                        Optional override value for the enviro variable $RUN2D
+  --outdir OUTDIR       Optional output directory (defaults to topdir/$RUN2D)
+  --skipcart [SKIPCART [SKIPCART ...]]
+                        Option list of cartridges to skip
+  --epoch               Produce FieldList for epoch coadds
+  --basehtml BASEHTML   html path for figure (defaults to relative from
+                        topdir)
+  --logfile LOGFILE     Manually Set logfile (including path)
+  --debug               Overrides the logger of the simplified error messages
+                        and prints standard python errors
+  --noplot              Skips updating the sky plots
+</pre></div>
+</div>
+</section>
+<section id="fieldmerge">
+<span id="id7"></span><h3>fieldmerge<a class="headerlink" href="#fieldmerge" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: fieldmerge [-h] [--run2d RUN2D] [--indir INDIR] [--skip_line]
+                  [--include_bad] [--legacy] [--skip_specprimary] [--lite]
+                  [--XCSAO] [--field FIELD] [--mjd MJD] [--clobber]
+                  [--verbose] [--logfile LOGFILE] [--epoch]
+                  [--programs [PROGRAMS [PROGRAMS ...]]]
+                  [--datamodel DATAMODEL] [--line_datamodel LINE_DATAMODEL]
+                  [--outroot OUTROOT] [--remerge_fmjd REMERGE_FMJD]
+                  [--merge_only] [--allsky] [--custom CUSTOM] [--run1d RUN1D]
+                  [--limit LIMIT] [--ndays MJDSTART]
+
+Build BOSS spAll Summary File
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --run2d RUN2D         Optional override value for the enviro variable $RUN2D
+  --indir INDIR         Optional override value for the environment variable
+                        $BOSS_SPECTRO_REDUX
+  --skip_line           skip the generation of spAllLine.fits
+  --include_bad         include bad fields
+  --legacy              Include columns used by SDSS-IV and depreciated in
+                        SDSS-V
+  --skip_specprimary    Skip creation of specprimary and associated columns
+  --lite                Produce lite version of spAll file
+  --XCSAO               Include XCSAO columns
+  --field FIELD, -f FIELD
+                        Run for a single Field
+  --mjd MJD, -m MJD     Run for a single MJD
+  --clobber             Clobber all spAll-field-mjd files
+  --verbose             Log columns not saved
+  --logfile LOGFILE     Manually set logfile
+  --epoch               Produce spAll for epoch coadds
+  --programs [PROGRAMS [PROGRAMS ...]]
+                        List of programs to include
+  --datamodel DATAMODEL
+                        Supply a spAll datamodel file (defaults to
+                        $IDLSPEC2D/datamodel/spall_dm.par)
+  --line_datamodel LINE_DATAMODEL
+                        Supply a spline datamodel file (defaults to
+                        $IDLSPEC2D/datamodel/spzline_dm.par)
+  --outroot OUTROOT     Path and root of filename for output (defaults to
+                        $BOSS_SPECTRO_REDUX/$RUN2D/{field}/{mjd}/spAll)
+  --remerge_fmjd REMERGE_FMJD, -r REMERGE_FMJD
+                        Field-MJD to replace in spAll
+  --merge_only, -o      Skip Building new spAll-Field-MJD files and just merge
+                        existing
+  --allsky              Build spAll for Allsky Custom Coadd
+  --custom CUSTOM       Name of Custom Coadd
+  --run1d RUN1D         Optional override value for the enviro variable $RUN1D
+                        (only for custom allsky coadds)
+  --limit LIMIT         Limit number of Field-MJD spAll files to read before
+                        save
+  --ndays MJDSTART      Limit update to last ndays
+</pre></div>
+</div>
+</section>
+<section id="filecheck">
+<span id="id8"></span><h3>filecheck<a class="headerlink" href="#filecheck" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: filecheck [-h] cmd file
+
+        Check File (uncompressed or gz) favor/instrument/quality
+
+        science:
+          return &quot;true&quot; if the fits file is a science frame.  This
+          is determined by flavor=science in the header.  If flavor
+          is not in the header, &quot;false&quot; is returned.
+
+        test:
+          return &quot;true&quot; if the fits file is a test frame.  This is
+          determined by quality=test in the header.  If quality
+          is not in the header, &quot;false&quot; is returned
+
+        excellent:
+          return &quot;true&quot; if the fits file is a excellent frame.  This is
+          determined by quality=excellent in the header.  If quality
+          is not in the header, &quot;true&quot; is returned
+
+        boss:
+          return &quot;true&quot; if the plPlugMapM file is a boss frame.
+          this is determined by instrument=boss in the header.
+          If instrument is not in the header, &quot;false&quot; is returned.
+
+
+positional arguments:
+  cmd         file check command
+  file        fits file
+
+optional arguments:
+  -h, --help  show this help message and exit
+</pre></div>
+</div>
+</section>
+<section id="fluxcorr-prior">
+<span id="id9"></span><h3>fluxcorr_prior<a class="headerlink" href="#fluxcorr-prior" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: fluxcorr_prior [-h] [--xythrucorr] planfile
+
+Try solving with a prior that fluxcorr = 1
+
+positional arguments:
+  planfile
+
+optional arguments:
+  -h, --help    show this help message and exit
+  --xythrucorr
+</pre></div>
+</div>
+</section>
+<section id="idlspec2d-version">
+<span id="id10"></span><h3>idlspec2d_version<a class="headerlink" href="#idlspec2d-version" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: idlspec2d_version
+</pre></div>
+</div>
+</section>
+<section id="loadsn2value">
+<span id="id11"></span><h3>loadSN2Value<a class="headerlink" href="#loadsn2value" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: loadSN2Value [-h] [-v] [-u] [--sdssv_sn2] fits confSum
+
+Load SOS SN2 values into OpsDB
+
+positional arguments:
+  fits           The fits file is the science frame output from sos-reduce
+  confSum        confSummary-file
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  verbose
+  -u, --update   update (An error will occur if the exposure has already been
+                 processed, unless set)
+  --sdssv_sn2    sdssv_sn2
+</pre></div>
+</div>
+</section>
+<section id="manage-coadd-schema">
+<span id="id12"></span><h3>manage_coadd_Schema<a class="headerlink" href="#manage-coadd-schema" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: manage_coadd_Schema [-h] [--coaddfile COADDFILE] [--topdir TOPDIR]
+                           [--run2d RUN2D] [--name NAME] [--DR] [--rerun1d]
+                           [--active] [--carton [CARTON [CARTON ...]]]
+                           [--SDSSIDS [SDSSIDS [SDSSIDS ...]]]
+                           [--program [PROGRAM [PROGRAM ...]]]
+                           [--legacy [LEGACY [LEGACY ...]]] [--use_catid]
+                           [--use_firstcarton] [--cadence CADENCE] [--show]
+                           [--mjd [MJD [MJD ...]]]
+
+Manage Custom Coadds
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --coaddfile COADDFILE, -f COADDFILE
+                        File to store Coadding Schema (Default:
+                        {topdir}/{run2d}/SDSSV_BHM_COADDS.par
+  --topdir TOPDIR       Override value for the environment variable
+                        $BOSS_SPECTRO_REDUX.
+  --run2d RUN2D         Override value for the environment variable $RUN2D
+  --name NAME           Name of Custom Coadd
+  --DR                  DR/IPL Coadding
+  --rerun1d, -r         Provides flag for coadd to be rerun though 1D analysis
+  --active, -a          Activate (or deactivate) a Coadding Schema
+  --carton [CARTON [CARTON ...]], -c [CARTON [CARTON ...]]
+                        list of cartons
+  --SDSSIDS [SDSSIDS [SDSSIDS ...]], -i [SDSSIDS [SDSSIDS ...]]
+                        list of SDSS_IDS (or CatalogIDs if use_catid is set)
+  --program [PROGRAM [PROGRAM ...]], -p [PROGRAM [PROGRAM ...]]
+                        list of programs
+  --legacy [LEGACY [LEGACY ...]], -l [LEGACY [LEGACY ...]]
+                        list of Legacy Tags to include
+  --use_catid, -u       Use CatalogIDs rather then SDSS_IDs
+  --use_firstcarton     Use Firstcarton only for carton match (dont look at
+                        db)
+  --cadence CADENCE, -t CADENCE
+                        Number of days between coadd epochs
+  --show, -s            Show Configurations
+  --mjd [MJD [MJD ...]]
+                        Use data from these MJDs.
+</pre></div>
+</div>
+</section>
+<section id="read-sos">
+<span id="id13"></span><h3>read_sos<a class="headerlink" href="#read-sos" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: read_sos [-h] [--exp EXP] [--nocopy] directory mjd
+
+Create Fiber info Summary for SOS
+
+positional arguments:
+  directory          SOS Directory
+  mjd                mjd
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --exp EXP, -e EXP  Exposure Name
+  --nocopy, -n       Prevent copy to combined Directory
+</pre></div>
+</div>
+</section>
+<section id="readfibermaps">
+<span id="id14"></span><h3>readfibermaps<a class="headerlink" href="#readfibermaps" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: readfibermaps [-h] [-p SPPLAN2D] [--topdir TOPDIR] [-c] [--fast]
+                     [--datamodel DATAMODEL] [-s] [--release RELEASE]
+                     [--remote] [--dr19] [--confSummary CONFSUMMARY]
+                     [--ccd {b2,r2,b1,r1}] [--mjd MJD] [--log]
+
+Produces spfibermap file corresponding to a spplan2d (or single confSummary
+file for SOS)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p SPPLAN2D, --spplan2d SPPLAN2D
+                        spplan2d file for idlspec2d run
+  --topdir TOPDIR       Alternative output directory (defaults to location of
+                        spplan2d file or /data/boss/sos/{mjd} for SOS)
+  -c, --clobber         overwrites previous spfibermap file
+  --fast                When using --no_db, streamlines process and only gets
+                        parallax from MOS target files
+  --datamodel DATAMODEL
+                        Supply a datamodel file (defaults to
+                        $IDLSPEC2D/datamodel/spfibermap_dm.par or
+                        $IDLSPEC2D/datamodel/spfibermap_sos_dm.par for SOS)
+  -s, --SOS             produces spfibermap for SOS
+  --release RELEASE     sdss_access data release (defaults to sdsswork),
+                        required if you do not have proprietary access,
+                        otherwise see https://sdss-
+                        access.readthedocs.io/en/latest/auth.html#auth
+  --remote              allow for remote access to data using sdss-access
+  --dr19                Limit targeting flags to DR19 cartons
+
+SOS:
+  Options of use with SOS only
+
+  --confSummary CONFSUMMARY
+                        confSummary file for SOS (required for with --SOS)
+  --ccd {b2,r2,b1,r1}   CCD for SOS
+  --mjd MJD             MJD of observation
+  --log                 creates log file in topdir
+</pre></div>
+</div>
+</section>
+<section id="run-pyxcsao">
+<span id="id15"></span><h3>run_PyXCSAO<a class="headerlink" href="#run-pyxcsao" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: run_PyXCSAO [-h] [--run1d RUN1D] [--epoch] fitsfile
+
+Runs pyXCSAO to determine RVs
+
+positional arguments:
+  fitsfile              fits file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --run1d RUN1D, -r RUN1D
+                        run1d name
+  --epoch               run for epoch Coadds
+</pre></div>
+</div>
+</section>
+<section id="sdr-hdrfix">
+<span id="id16"></span><h3>sdR_hdrfix<a class="headerlink" href="#sdr-hdrfix" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: sdR_hdrfix [-h] [--mjd MJD] [--obs {APO,LCO}] [--clobber]
+                  [--cameras {b1,b2,r1,r2,??}] [--bad] [--test]
+                  [--FF {0,1} {0,1} {0,1} {0,1}]
+                  [--FFS {0,1} {0,1} {0,1} {0,1} {0,1} {0,1} {0,1} {0,1}]
+                  [--NE {0,1} {0,1} {0,1} {0,1}]
+                  [--HGCD {0,1} {0,1} {0,1} {0,1}]
+                  [--HEAR {0,1} {0,1} {0,1} {0,1}] [--arc] [--flat]
+                  [--hartmann {Out,Right,Left,Closed}]
+                  [--quality {excellent,test,bad}]
+                  [--flavor {bias,dark,flat,arc,science,smear}]
+                  [--exptime EXPTIME] [--tai-beg TAI_BEG]
+                  [--cartid {FPS-S,FPS-N}] [--fieldid FIELDID]
+                  [--confid CONFIGID] [--designid DESIGNID] [--key KEY]
+                  [--value VALUE]
+                  expid
+
+Create the files used by the pipeline to fix the header meta data of the BOSS
+exposures
+
+positional arguments:
+  expid                                                  Exposure ID
+
+optional arguments:
+  -h, --help                                             show this help
+                                                         message and exit
+  --mjd MJD, -m MJD                                      mjd of file (default:
+                                                         latest MJD)
+  --obs {APO,LCO}                                        Set Observatory
+                                                         (default:APO)
+  --clobber                                              clobber sdHdrFix file
+  --cameras {b1,b2,r1,r2,??}                             Cameras for hdr
+                                                         update (?? for all
+                                                         cameras) [default:??]
+
+Optional Quality Update (exclusive)
+    At current only use if still exposing or don&#39;t run SOS after (skip and note in Night Log (and/or email) if uncertain):
+  --bad, -b                                              flag as quality=bad
+  --test, -t                                             flag as quality=test
+
+Optional lamp/screen keys to Update (1:on, 0:off):
+  --FF {0,1} {0,1} {0,1} {0,1}                           Flat Field Lamp
+  --FFS {0,1} {0,1} {0,1} {0,1} {0,1} {0,1} {0,1} {0,1}  Flat Field Screen
+  --NE {0,1} {0,1} {0,1} {0,1}                           Ne arc lamp
+  --HGCD {0,1} {0,1} {0,1} {0,1}                         HeCd arc Lamp
+  --HEAR {0,1} {0,1} {0,1} {0,1}                         HeAr arc Lamp
+  --arc                                                  short cut to set all
+                                                         relevant arc lamps to
+                                                         1 1 1 1
+  --flat                                                 short cut to set FF =
+                                                         1 1 1 1 &amp; FFS = 1 1 1
+                                                         1 1 1 1 1
+  --hartmann {Out,Right,Left,Closed}                     Hartmann Door Status
+
+Optional Common keys to Update
+    At current only use if still exposing or don&#39;t run SOS after (skip and note in Night Log (and/or email) if uncertain):
+  --quality {excellent,test,bad}                         Set Quality flat of
+                                                         exposures
+
+Optional Specialized Keys to Update
+     Only use if still exposing or don&#39;t run SOS after (skip and note in Night Log (and/or email) if uncertain):
+  --flavor {bias,dark,flat,arc,science,smear}            Type/Flavor of
+                                                         exposure
+  --exptime EXPTIME                                      Exposure length (s)
+  --tai-beg TAI_BEG                                      Starting time (tai)
+                                                         of exposure
+  --cartid {FPS-S,FPS-N}                                 Cartridge Mounted
+  --fieldid FIELDID                                      FieldID
+  --confid CONFIGID                                      ConfigureID
+  --designid DESIGNID                                    DesignID
+
+Manually update a key
+     Only use if still exposing or don&#39;t run SOS after (skip and note in Night Log (and/or email) if uncertain):
+  --key KEY, -k KEY                                      header keyword to
+                                                         update (required if
+                                                         value is set)
+  --value VALUE, -v VALUE                                updated header
+                                                         keyword value
+                                                         (required if key is
+                                                         set)
+
+one or more update options are required
+</pre></div>
+</div>
+</section>
+<section id="slurm-fieldmerge">
+<span id="id17"></span><h3>slurm_fieldmerge<a class="headerlink" href="#slurm-fieldmerge" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: slurm_fieldmerge [-h] [--module MODULE] [--walltime WALLTIME] [--fast]
+                        [--mem MEM] [--daily]
+
+Create daily field merge slurm job. Without access to the SDSS Slurm package,
+it prints the commands for manual execution
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --module MODULE, -m MODULE
+                        module file to use (ex bhm/master[default] or
+                        bhm/v6_0_9)
+  --walltime WALLTIME, -w WALLTIME
+                        Job wall time (format hh:mm:ss) default = &quot;40:00:00&quot;
+  --fast                use fast allocation
+  --mem MEM             memory in bytes
+  --daily               only run if daily run has been run today
+</pre></div>
+</div>
+</section>
+<section id="slurm-readfibermap">
+<span id="id18"></span><h3>slurm_readfibermap<a class="headerlink" href="#slurm-readfibermap" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: slurm_readfibermap [-h] [--module MODULE] [--topdir TOPDIR]
+                          [--run2d RUN2D] [--clobber] [--apo] [--lco] [--dr19]
+                          [--mjd [MJD [MJD ...]]] [--mjdstart MJDSTART]
+                          [--mjdend MJDEND] [--mem_per_cpu MEM_PER_CPU]
+                          [--walltime WALLTIME] [--ppn PPN]
+
+Create daily field merge slurm job. Without access to the SDSS Slurm package,
+it prints the commands for manual execution
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --module MODULE, -m MODULE
+                        module file to use (ex bhm/master or bhm/v6_0_9)
+  --topdir TOPDIR       Boss Spectro Redux base directory
+  --run2d RUN2D         Run2d
+  --clobber             Clobber spfibermaps
+  --apo                 run apo
+  --lco                 run lco
+  --dr19                Limit targeting flags to DR19 cartons
+
+Select MJDs:
+  --mjd [MJD [MJD ...]]
+                        MJD dates to reduce; default=&quot;*&quot;
+  --mjdstart MJDSTART   Starting MJD
+  --mjdend MJDEND       Ending MJD
+
+Slurm Options:
+  --mem_per_cpu MEM_PER_CPU
+                        Memory allocated per CPU
+  --walltime WALLTIME   Wall time in hours
+  --ppn PPN             Number of processors per node
+</pre></div>
+</div>
+</section>
+<section id="slurm-sos">
+<span id="id19"></span><h3>slurm_sos<a class="headerlink" href="#slurm-sos" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: slurm_sos [-h] [--apo] [--lco] [--mjd [MJD [MJD ...]]]
+                 [--mjdstart MJDSTART] [--mjdend MJDEND] [--no_reject]
+                 [--clobber_fibermap] [--no_sdssv_sn2] [-n] [-o] [--a2t]
+                 [--mem_per_cpu MEM_PER_CPU] [--walltime WALLTIME]
+                 [--nodes NODES] [--ppn PPN] [--no_submit]
+
+Create SOS slurm job. Without access to the SDSS Slurm package, it prints the
+commands for manual execution
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --apo                 run apo
+  --lco                 run lco
+
+Select MJDs:
+  --mjd [MJD [MJD ...]]
+                        MJD dates to reduce; default=Today
+  --mjdstart MJDSTART   Starting MJD
+  --mjdend MJDEND       Ending MJD
+
+SOS Options:
+  --no_reject           Overrides the Calibration rejection (use with caution)
+  --clobber_fibermap, -f
+                        Clobbers the existing spfibermap files
+  --no_sdssv_sn2        Skip reporting a second set of SN2 values with updated
+                        fit parameters
+  -n, --no_arc2trace    Skip Utilizing arc2trace refinements
+  -o, --forcea2t        Force arc2trace for all fields (even if flat exists
+                        for field)
+  --a2t
+
+Slurm Options:
+  --mem_per_cpu MEM_PER_CPU
+                        Memory allocated per CPU
+  --walltime WALLTIME   Wall time in hours
+  --nodes NODES         Number of nodes to use; default=1
+  --ppn PPN             Number of processors per node
+  --no_submit           Skip submitting process to queue
+</pre></div>
+</div>
+</section>
+<section id="slurm-sptrace">
+<span id="id20"></span><h3>slurm_spTrace<a class="headerlink" href="#slurm-sptrace" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: slurm_spTrace [-h] [--module MODULE] [--topdir TOPDIR] [--run2d RUN2D]
+                     [--mjd [MJD [MJD ...]]] [--mjdstart MJDSTART]
+                     [--mjdend MJDEND] [--lco] [--clobber] [--debug]
+                     [--skip_plan]
+
+Create spTrace slurm jobs. Without access to the SDSS Slurm package, it prints
+the commands for manual execution.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --module MODULE, -m MODULE
+                        module file to use (ex bhm/master or bhm/v6_0_9)
+  --topdir TOPDIR       Boss Spectro Redux base directory
+  --run2d RUN2D         Run2d
+  --mjd [MJD [MJD ...]]
+  --mjdstart MJDSTART
+  --mjdend MJDEND
+  --lco
+  --clobber
+  --debug
+  --skip_plan
+</pre></div>
+</div>
+</section>
+<section id="sos-command">
+<span id="id21"></span><h3>sos_command<a class="headerlink" href="#sos-command" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: sos_command -f name -i path -p name -l path -s path -m 00000 [-d -e]
+
+   -f    Fits file name
+   -i    Fits file directory path
+   -p    Plugmap file name
+   -l    Plugmap file directory path
+   -s    SOS Directory
+   -m    MJD
+
+   -d    Dry run.
+   -e    FPS mode
+   -a    no cal mode
+   -n    no OpsDB upload
+   -v    calculate SN2_v2 (SDSS-V)
+
+All parameters except -d, -a, and -e are required, FPS mode is set by default.
+Normally sos_command will be called by sos_runnerd.
+</pre></div>
+</div>
+</section>
+<section id="spspec-reformat">
+<span id="id22"></span><h3>spSpec_reformat<a class="headerlink" href="#spspec-reformat" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: spSpec_reformat [-h] --field FIELD --mjd MJD [--topdir TOPDIR]
+                       [--run2d RUN2D] [--run1d RUN1D] [--custom CUSTOM]
+                       [--plot] [--epoch] [--lsdr10] [--allsky]
+
+Build Spec Files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --field FIELD, -f FIELD
+                        Run for a single Field
+  --mjd MJD, -m MJD     Run for a single MJD
+  --topdir TOPDIR       Optional override value for the environment variable
+                        $BOSS_SPECTRO_REDUX
+  --run2d RUN2D         Optional override value for the enviro variable $RUN2D
+  --run1d RUN1D         Optional override value for the enviro variable $RUN2D
+  --custom CUSTOM       Name of Custom Coadd schema
+  --plot, -p            Create spec plots
+  --epoch, -e           Run for epoch Coadds
+  --lsdr10              Include Legacy Survey DR10 links on HTML
+  --allsky              Include Legacy Survey DR10 links on HTML
+</pre></div>
+</div>
+</section>
+<section id="spplan">
+<span id="id23"></span><h3>spplan<a class="headerlink" href="#spplan" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: spplan [-h] [--skip2d] [--skip1d] [--module MODULE] [--topdir TOPDIR]
+              [--run2d RUN2D] [--lco] [--logfile LOGFILE] [--verbose VERBOSE]
+              [-c] [--release RELEASE] [--remote] [--override_manual]
+              [--mjd [MJD [MJD ...]]] [--mjdstart MJDSTART] [--mjdend MJDEND]
+              [--field [FIELD [FIELD ...]]] [--fieldstart FIELDSTART]
+              [--fieldend FIELDEND] [--legacy] [--plates] [--fps] [--sdssv]
+              [--no_commissioning] [--no_dither] [--matched_flats]
+              [--nomatched_arcs] [--minexp MINEXP] [--single_flat]
+              [--multiple_arc] [--manual_noarc] [--plate_epoch] [--quick]
+
+Produce the spPlan2d and spPlancomb files for the pipeline run
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+General:
+  General Setup Options
+
+  --skip2d              Skip spplan2d
+  --skip1d              Skip spplan1d
+  --module MODULE       Module file to load for run
+  --topdir TOPDIR       Base run2d directory to override module or
+                        environmental variable
+  --run2d RUN2D         Run2d to override module or environmental variable
+  --lco                 Build Run files for LCO
+  --logfile LOGFILE     Optional logfile (Including path)
+  --verbose VERBOSE     Provide information about nonutlized frames
+  -c, --clobber         overwrites previous plan file
+  --release RELEASE     sdss_access data release (defaults to sdsswork),
+                        required if you do not have proprietary access,
+                        otherwise see https://sdss-
+                        access.readthedocs.io/en/latest/auth.html#auth
+  --remote              allow for remote access to data using sdss-access
+  --override_manual     Override/clobber manually edited plan
+
+MJD/Field Filtering:
+  MJD/Field Filtering Options
+
+  --mjd [MJD [MJD ...]]
+                        Use data from these MJDs.
+  --mjdstart MJDSTART   Starting MJD
+  --mjdend MJDEND       Ending MJD
+  --field [FIELD [FIELD ...]]
+                        Use data from these fields.
+  --fieldstart FIELDSTART
+                        Starting Field
+  --fieldend FIELDEND   Ending Field
+  --legacy              Include legacy (BOSS/eBOSS) plates
+  --plates              Include SDSS-V plates
+  --fps                 Include FPS Fields
+  --sdssv               Include both SDSS-V Fields &amp; Plates
+  --no_commissioning    Exclude SDSS-V FPS Commission Fields
+  --no_dither           Exclude Dither fields
+
+RUN2D:
+  spPlan2d Setup Options
+
+  --matched_flats       Require Flat from a field/plate
+  --nomatched_arcs      Allow Arc from another field/plate
+  --minexp MINEXP       Min Science Exposures in Plan (default=1)
+  --single_flat         Only find the closest flat calibration frame
+  --multiple_arc        Find all possible arc calibration frames
+  --manual_noarc        if nomatched_arcs is False, builds spplan with
+                        unmatched arcs and mark as manual
+
+RUN1D:
+  spPlancomb Setup Options
+
+  --plate_epoch         Use a variable max epoch length for plate coadd
+  --quick               Use the list of new spPlan2d as a filter for fields
+</pre></div>
+</div>
+</section>
+<section id="spplan-epoch">
+<span id="id24"></span><h3>spplan_epoch<a class="headerlink" href="#spplan-epoch" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: spplan_epoch [-h] [--module MODULE] [--topdir TOPDIR] [--run2d RUN2D]
+                    [--run1d RUN1D] [--mjd MJD] [--mjdstart MJDSTART]
+                    [--mjdend MJDEND] [--fieldid FIELDID]
+                    [--fieldst FIELDSTART] [--fieldend FIELDEND] [--fps]
+                    [--sdssv] [--clobber] [--minexp MINEXP] [--lco]
+                    [--logfile LOGFILE] [--abandoned] [--started]
+                    [--min_epoch_len MIN_EPOCH_LEN] [--release RELEASE]
+                    [--remote]
+
+Builds the spPlancombepoch files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --module MODULE       Module file to load for run
+  --topdir TOPDIR       Override value for the environment variable
+                        $BOSS_SPECTRO_REDUX.
+  --run2d RUN2D         Override value for the environment variable $RUN2D
+  --run1d RUN1D         Override value for the environment variable $RUN1D
+  --mjd MJD             Use data from these MJDs.
+  --mjdstart MJDSTART   Starting MJD
+  --mjdend MJDEND       Ending MJD
+  --fieldid FIELDID     Look for the input data files in topdir/fieldid;
+                        default to search all subdirectories. Note that this
+                        need not be integer-valued, but could be for example
+                        &#39;0306_test&#39;.
+  --fieldst FIELDSTART  Starting fieldid
+  --fieldend FIELDEND   Ending fieldid
+  --fps                 Only produce epoch coadds for FPS Fields
+                        (Fields&gt;16000)
+  --sdssv               Only produce epoch coadds for SDSS-V Fields
+                        (Fields&gt;15000)
+  --clobber             If set, then over-write conflicting plan files
+  --minexp MINEXP       Set minimum number of Science Frames for plan creation
+  --lco                 Create Plans for LCO
+  --logfile LOGFILE, -l LOGFILE
+                        File for logging
+  --abandoned           Create plans for abandoned epochs
+  --started             Create plans for started epochs (including unfinished)
+  --min_epoch_len MIN_EPOCH_LEN
+                        minimum length of epoch required to produce plan
+  --release RELEASE     sdss_access data release (defaults to sdsswork),
+                        required if you do not have proprietary access,
+                        otherwise see https://sdss-
+                        access.readthedocs.io/en/latest/auth.html#auth
+  --remote              allow for remote access to data using sdss-access
+</pre></div>
+</div>
+</section>
+<section id="spplan-target">
+<span id="id25"></span><h3>spplan_target<a class="headerlink" href="#spplan-target" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: spplan_target [-h] (--manual | --batch) [--module MODULE] [--name NAME]
+                     [--coaddfile COADDFILE] [--topdir TOPDIR] [--run2d RUN2D]
+                     [--run1d RUN1D] [--clobber] [--logfile LOGFILE] [--DR]
+                     [--cartons [CARTONS [CARTONS ...]]]
+                     [--catalogids [CATALOGIDS [CATALOGIDS ...]]]
+                     [--program [PROGRAM [PROGRAM ...]]]
+                     [--mjd [MJD [MJD ...]]] [--mjdstart MJDSTART]
+                     [--mjdend MJDEND] [--coadd_mjdstart COADD_MJDSTART]
+                     [--rerun1d] [--use_catid] [--use_firstcarton] [--useDB]
+                     [--lco]
+
+Build CatalogID Combine Plan
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --manual              Manaully run a Coadd Schema (from coaddfile if only
+                        name is set)
+  --batch               Batch run all active Coadd Schema in batch file
+                        located {topdir}/{run2d}/{name}
+  --module MODULE       Module file to load for run
+  --name NAME           Name of Custom Coadd
+  --coaddfile COADDFILE
+                        File of store Coadding Schema
+  --topdir TOPDIR       Override value for the environment variable
+                        $BOSS_SPECTRO_REDUX.
+  --run2d RUN2D         Override value for the environment variable $RUN2D
+  --run1d RUN1D         Override value for the environment variable $RUN1D
+  --clobber             If set, then over-write conflicting plan files
+  --logfile LOGFILE     File for logging
+  --DR                  DR/IPL Batch Coadding
+  --cartons [CARTONS [CARTONS ...]]
+                        list of cartons
+  --catalogids [CATALOGIDS [CATALOGIDS ...]]
+                        list of sdss_ids (or catalogids)
+  --program [PROGRAM [PROGRAM ...]]
+                        list of programs
+  --mjd [MJD [MJD ...]]
+                        Use data from these MJDs.
+  --mjdstart MJDSTART   Starting MJD
+  --mjdend MJDEND       Ending MJD
+  --coadd_mjdstart COADD_MJDSTART
+                        First Coadd MJD to include
+  --rerun1d             Provides flag for coadd to be rerun though 1D analysis
+  --use_catid, -u       Uses CatalogID rather then sdss_id
+  --use_firstcarton     Use Firstcarton only for carton match (dont look at
+                        db)
+  --useDB               Use sdss targetdb instead of the Semaphore targeting
+                        flag (if not use_firstcarton)
+  --lco                 Create Plans for LCO
+</pre></div>
+</div>
+</section>
+<section id="spplan-trace">
+<span id="id26"></span><h3>spplan_trace<a class="headerlink" href="#spplan-trace" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: spplan_trace [-h] [--module MODULE] [--topdir TOPDIR] [--run2d RUN2D]
+                    [--lco] [--logfile LOGFILE] [--verbose VERBOSE] [-c]
+                    [--release RELEASE] [--remote] [--override_manual]
+                    [--mjd [MJD [MJD ...]]] [--mjdstart MJDSTART]
+                    [--mjdend MJDEND] [--legacy] [--plates] [--fps] [--sdssv]
+
+Produces spPlanTrace
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+General:
+  General Setup Options
+
+  --module MODULE       Module file to load for run
+  --topdir TOPDIR
+  --run2d RUN2D         Run2d to override module or environmental variable
+  --lco                 Build Run files for LCO
+  --logfile LOGFILE     Optional logfile (Including path)
+  --verbose VERBOSE     Provide information about nonutlized frames
+  -c, --clobber         overwrites previous plan file
+  --release RELEASE     sdss_access data release (defaults to sdsswork),
+                        required if you do not have proprietary access,
+                        otherwise see https://sdss-
+                        access.readthedocs.io/en/latest/auth.html#auth
+  --remote              allow for remote access to data using sdss-access
+  --override_manual     Override/clobber manually edited plan
+
+MJD/Field Filtering:
+  MJD/Field Filtering Options
+
+  --mjd [MJD [MJD ...]]
+                        Use data from these MJDs.
+  --mjdstart MJDSTART   Starting MJD
+  --mjdend MJDEND       Ending MJD
+  --legacy              Include legacy (BOSS/eBOSS) plates
+  --plates              Include SDSS-V plates
+  --fps                 Include FPS Fields
+  --sdssv               Include both SDSS-V Fields &amp; Plates
+</pre></div>
+</div>
+</section>
+<section id="sxpar-py">
+<span id="id27"></span><h3>sxpar.py<a class="headerlink" href="#sxpar-py" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: sxpar.py [-h] [-v] fitsfile keyword
+
+Simply parse a fits header
+
+positional arguments:
+  fitsfile       The fits file to read
+  keyword        Header keyword to parse
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  verbose
+</pre></div>
+</div>
+</section>
+<section id="sxpar-retry-py">
+<span id="id28"></span><h3>sxpar_retry.py<a class="headerlink" href="#sxpar-retry-py" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: sxpar_retry.py [-h] [-v] fitsfile keyword
+
+Simply parse a fits header, retrying if failed
+
+positional arguments:
+  fitsfile       The fits file to read
+  keyword        Header keyword to parse
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  verbose
+</pre></div>
+</div>
+</section>
+<section id="update-flags">
+<span id="id29"></span><h3>update_flags<a class="headerlink" href="#update-flags" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: update_flags [-h] [--run2d RUN2D] [--topdir TOPDIR] [--clobber]
+                    [--custom [CUSTOM [CUSTOM ...]]] [--nobackup]
+
+Update SDSSV Targeting flats inn the summary files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --run2d RUN2D         idlspec2d Run2d version
+  --topdir TOPDIR       idlspec2d Run2d topdir
+  --clobber             Clobber spTargeting file
+  --custom [CUSTOM [CUSTOM ...]]
+                        List of name of custom coadd schema
+  --nobackup            Skip backup of existing
+</pre></div>
+</div>
+</section>
+<section id="uubatchpbs">
+<span id="id30"></span><h3>uubatchpbs<a class="headerlink" href="#uubatchpbs" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: uubatchpbs [-h] [--sdssv] [--sdssv_fast] [--sdssv_noshare] [--apo]
+                  [--lco] [--bay15] [--merge3d] [--obs [OBS [OBS ...]]]
+                  [--topdir TOPDIR] [--run1d RUN1D] [--run2d RUN2D]
+                  [--idlutils_1d IDLUTILS_1D] [--no_reject] [--MWM_fluxer]
+                  [--map3d {bayestar15,bay15,merge3d}] [--no_healpix]
+                  [--noxcsao] [--skip_specprimary] [--no_merge_spall]
+                  [--skip2d] [--only1d] [--onestep_coadd] [--fibermap_clobber]
+                  [--saveraw] [--debug] [--no_db] [--fast_no_db FAST_NO_DB]
+                  [--sdss_access_release SDSS_ACCESS_RELEASE]
+                  [--sdss_access_remote] [--dr19] [--a2t]
+                  [--fieldids [FIELDIDS [FIELDIDS ...]]]
+                  [--fieldstart FIELDSTART] [--fieldend FIELDEND]
+                  [--mjd [MJD [MJD ...]]] [--mjdstart MJDSTART]
+                  [--mjdend MJDEND] [--no_write] [--shared] [--fast]
+                  [--mem_per_cpu MEM_PER_CPU] [--walltime WALLTIME]
+                  [--nodes NODES] [--ppn PPN] [--nosubmit] [--clobber]
+                  [--epoch] [--custom CUSTOM] [--allsky] [--coadd_only]
+                  [--1dpost] [--email]
+
+Build idlspec2d redux and submit to slurm. Without access to the SDSS Slurm
+package, it prints the commands for manual execution
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Short cuts:
+  --sdssv               --mwm, --no_merge_spall, --no_reject
+  --sdssv_fast
+  --sdssv_noshare
+  --apo
+  --lco
+  --bay15               Set map3d to bayestar15 model
+  --merge3d             Set map3d to best 3d model
+
+idlspec2d Run options:
+  --obs [OBS [OBS ...]]
+                        Observatory {apo,lco}
+  --topdir TOPDIR       Optional override value for the environment variable
+                        $BOSS_SPECTRO_REDUX
+  --run1d RUN1D         Optional override value for the enviro variable $RUN1D
+  --run2d RUN2D         Optional override value for the enviro variable $RUN2D
+  --idlutils_1d IDLUTILS_1D
+                        idlutils override version of spec1d
+  --no_reject           Deactivate Rejection in Coadd
+  --MWM_fluxer, --mwm
+  --map3d {bayestar15,bay15,merge3d}
+                        Name of 3d dustmap to use with MWM_fluxer
+                        (default=bayestar15)
+  --no_healpix, --nohp  Turn off copy to healpix
+  --noxcsao             Skip pyXCSAO
+  --skip_specprimary    Skip Calculation of Specprimary
+  --no_merge_spall      Skip building full SpAll File
+  --skip2d              Skip spreduce2d
+  --only1d              run spec1d step only (eg. spreduce1d_empca, XCSAO)
+  --onestep_coadd       Use legacy one step version of coadd
+  --fibermap_clobber    Clobber spfibermap fits file
+  --saveraw             Save sdssproc outputs
+  --debug               Save extraction debug files
+  --no_db               skip Database operations
+  --fast_no_db FAST_NO_DB
+                        When using --no_db, streamlines process and only gets
+                        parallax from MOS target files
+  --sdss_access_release SDSS_ACCESS_RELEASE
+                        sdss_access data release (defaults to sdsswork),
+                        required if you do not have proprietary access,
+                        otherwise see https://sdss-
+                        access.readthedocs.io/en/latest/auth.html#auth
+  --sdss_access_remote  allow for remote access to data using sdss-access
+  --dr19                Limit targeting flags to DR19 cartons
+  --a2t                 Force Use of Arc2Trace
+
+Select Fields:
+  --fieldids [FIELDIDS [FIELDIDS ...]], -f [FIELDIDS [FIELDIDS ...]]
+                        Plate/Field numbers to reduce default=&quot;*&quot;
+  --fieldstart FIELDSTART
+                        Starting Field/Plate number
+  --fieldend FIELDEND   End Field/Plate number
+
+Select MJDs:
+  --mjd [MJD [MJD ...]], -m [MJD [MJD ...]]
+                        MJD dates to reduce; default=&quot;*&quot;
+  --mjdstart MJDSTART   Starting MJD
+  --mjdend MJDEND       Ending MJD
+
+Slurm Options:
+  --no_write            skip writing and submitting job
+  --shared              Node sharing
+  --fast                Use SDSS fast queue
+  --mem_per_cpu MEM_PER_CPU
+                        Memory allocated per CPU
+  --walltime WALLTIME   Wall time in hours
+  --nodes NODES         Number of Nodes
+  --ppn PPN             Number of processors per node
+  --nosubmit            Build, but not submit redux files
+  --clobber             Clobber redux
+
+Custom Coadd Options:
+  --epoch               Epoch Coadds
+  --custom CUSTOM       Name of custom Coadd Schema
+  --allsky              All Sky Coadds
+  --coadd_only          Run spspec_target_merge only
+  --1dpost              Run 1d analysis and post processing only
+
+Email outputs:
+  --email               Email log using $HOME/daily/etc/emails
+</pre></div>
+</div>
+</section>
+<section id="uurundaily">
+<span id="id31"></span><h3>uurundaily<a class="headerlink" href="#uurundaily" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: uurundaily [-h] [--apo] [--lco] [--module MODULE]
+                  [--mjd [MJD [MJD ...]]] [--range_mjd RANGE_MJD] [--clobber]
+                  [--fast] [--saveraw] [--debug] [--skip_plan] [--nosubmit]
+                  [--noslurm] [--batch] [--nodb] [--epoch] [--summary]
+                  [--monitor] [--pause PAUSE] [--merge3d] [--traceflat]
+                  [--no_prep] [--no_dither]
+
+Process the BOSS data for a single MJD end-to-end (including plan files)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --apo
+  --lco
+  --module MODULE       Module for daily run
+  --mjd [MJD [MJD ...]]
+                        Manually run for a single/list of mjd (does not update
+                        nextmjd.par)
+  --range_mjd RANGE_MJD
+                        Manually run for a range of mjds (does not update
+                        nextmjd.par)
+  --clobber             clobber uubatchpbs run
+  --fast                turn on fast user for slurm
+  --saveraw             save sdssproc outputs
+  --debug               save extraction debug files
+  --skip_plan           Skip createing spplan files
+  --nosubmit            Skip submitting uubatch job (ideal for allowing
+                        editting of plans)
+  --noslurm             Skip creating uubatch job
+  --batch               run for multiple mjds in a single batch
+  --nodb                skip Database operations
+  --epoch               Run Epoch Coadds
+  --summary             Build Summary Files
+  --monitor             Monitors pipeline status
+  --pause PAUSE         Pause time (s) in status updates
+  --merge3d             Use prototype 3D Dustmap (in merge mode)
+  --traceflat           Build and use TraceFlats
+  --no_prep             Skip building TraceFlats and spfibermaps before
+                        pipeline run
+  --no_dither           Skip Dither Engineering Fields
+</pre></div>
+</div>
+</section>
+</section>
+<section id="idl-command-usage">
+<h2>IDL Command Usage<a class="headerlink" href="#idl-command-usage" title="Permalink to this heading">#</a></h2>
+<nav class="contents this-will-duplicate-information-and-it-is-still-useful-here local" id="id32">
+<ul class="simple">
+<li><p><a class="reference internal" href="#spreduce2d-pro" id="id69">spreduce2d.pro</a></p></li>
+<li><p><a class="reference internal" href="#rm-combine-script-pro" id="id70">rm_combine_script.pro</a></p></li>
+<li><p><a class="reference internal" href="#spreduce1d-empca-pro" id="id71">spreduce1d_empca.pro</a></p></li>
+<li><p><a class="reference internal" href="#spcalib-qa-pro" id="id72">spcalib_qa.pro</a></p></li>
+<li><p><a class="reference internal" href="#spspec-target-merge-pro" id="id73">spspec_target_merge.pro</a></p></li>
+</ul>
+</nav>
+<section id="spreduce2d-pro">
+<span id="id33"></span><h3>spreduce2d.pro<a class="headerlink" href="#spreduce2d-pro" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>;+
+; NAME:
+;   spreduce2d
+;
+; PURPOSE:
+;   Calling script for SPREDUCE that reduces a night of data according
+;   to a plan file.
+;
+; CALLING SEQUENCE:
+;   spreduce2d, [ planfile, docams=, /do_telluric, /xdisplay, $
+;    /writeflatmodel, /writearcmodel, /bbspec ]
+;
+; INPUTS:
+;
+; OPTIONAL INPUTS:
+;   planfile   - Name(s) of output plan file; default to reducing all
+;                plan files matching &#39;spPlan2d*.par&#39;
+;   docams     - Cameras to reduce; default to [&#39;b1&#39;, &#39;b2&#39;, &#39;r1&#39;, &#39;r2&#39;]
+;   do_telluric- Passed to EXTRACT_OBJECT
+;   xdisplay   - Send plots to X display rather than to plot file
+;   writeflatmodel - passed to SPCALIB via SPREDUCE to trigger writing
+;                    out of flat model info to file.
+;   writearcmodel  - passed to SPCALIB via SPREDUCE to trigger writing
+;                    out of arc model info to file.
+;   bbspec         - use bbspec extraction code
+;   noreject       - Override Bad calibration rejection (use with caution)
+;
+; Optional Keywords:
+;   MWM_fluxer  - Utilize MWM optional settings (ie gaia reddening and different S/N cuts)
+;
+;
+; OUTPUT:
+;
+; COMMENTS:
+;   The following environment variables must be set:
+;      BOSS_SPECTRO_DATA
+;      SDSSCORE
+;      SPECFLAT_DIR
+;   Look for raw FITS data files in BOSS_SPECTRO_DATA/MJD.
+;   Look for obsSummary files in SDSSCORE/MJD.
+;   Look for spectroscopic flat files in SPECFLAT_DIR.
+;
+; EXAMPLES:
+;
+; BUGS:
+;   This routine spawns the Unix command &#39;mkdir&#39;.
+;
+; PROCEDURES CALLED:
+;   cpbackup
+;   idlspec2d_version()
+;   idlutils_version()
+;   splog
+;   spreduce
+;   yanny_free
+;   yanny_par()
+;   yanny_read
+;
+; INTERNAL SUPPORT ROUTINES:
+;
+; REVISION HISTORY:
+;   02-Nov-1999  Written by David Schlegel, Princeton.
+;      Apr-2010  Added &quot;write[flat,arc]model&quot; pass-through (A. Bolton, Utah)
+;   15-Aug-2011  Added pass-through for spatial split of sky model (A. Bolton, Utah)
+;   15-Nov-2018: Modified for use only one spectrograph for the BHM (HJIM)
+;-
+</pre></div>
+</div>
+</section>
+<section id="rm-combine-script-pro">
+<span id="id34"></span><h3>rm_combine_script.pro<a class="headerlink" href="#rm-combine-script-pro" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>;+
+; NAME:
+;   rm_combine_script
+;
+; PURPOSE:
+;   Script to process epochs with the xyfit custom flux calibration
+;
+; CALLING SEQUENCE:
+;
+; INPUTS:
+;   planfile   - Name(s) of output plan file
+;
+; OPTIONAL INPUTS:
+;   run2d      - Name of the run2d
+;   finaldir   - Additional subdirectory for output
+;   xyfit      - Compute 2d flux corrections in the xy focal plane
+;   bscore     - Fraction of best exposure score to use as a threshold for discarding exposures
+;   minsn2     - Minimum S/N^2 to include science frame in coadd; default
+;                to 0 to only include those with S/N &gt; 0.
+;                Note that all exposures with a score less than 0.2 times
+;                the score of the best exposure are discarded; for those
+;                purposes, the score used is the worst of all 4 cameras.
+;
+;
+; Optional Keywords:
+;   MWM_fluxer    - Utilize MWM optional settings (ie gaia reddening and different S/N cuts)
+;   nofcorr       - Skip the step to generate and use the spFluxcorr* files
+;   nodist        - Skip the step to generate and use the spFluxdistort* files
+;   radec_coadd   - Coadd using ra-dec matching rather then catalogID matching
+;   no_reject     - Turns off rejection in the coadding
+;   onestep_coadd - Legacy algorithm for coadd. Coadding blue+red and all exposures
+;                    at the the same time.
+;   epoch         - Epoch Coadd flag for input and outputs
+;   legacy        - Flag for Pre-SDSSV 2 Spectrograph data at APO
+;   plates        - Flat for SDSSV 1 Spectrograph plate data at APO
+;   loaddesi      - Load the DESI (JG) models for fluxing
+;   skipfluxing   - Skip the step to generate spFluxcalib* files
+;   skipfcorr     - Skip creation of flux-correction vectors and use prexisting spFluxcorr* files
+;
+; OUTPUT:
+;
+; COMMENTS:
+; EXAMPLES:
+;
+; BUGS:
+;   This routine spawns the Unix command &#39;mkdir&#39;.
+;
+; PROCEDURES CALLED:
+;   get_field_dir
+;   djs_filepath
+;   rm_spcombine_v5
+;
+;
+</pre></div>
+</div>
+</section>
+<section id="spreduce1d-empca-pro">
+<span id="id35"></span><h3>spreduce1d_empca.pro<a class="headerlink" href="#spreduce1d-empca-pro" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>;+
+; NOTE: same as spreduce1d, but uses different QSO PCA templates
+; NAME:
+;   spreduce1d
+;
+; PURPOSE:
+;   1-D reduction of spectra from 1 plate
+;
+; CALLING SEQUENCE:
+;   spreduce1d, [ platefile, fiberid=, run1d=, /doplot, /debug, chop_data= ]
+;
+; INPUTS:
+;
+; OPTIONAL INPUTS:
+;   platefile  - Plate file(s) from spectro-2D; default to all files
+;                matching &#39;spPlate*.fits&#39;
+;   fiberid    - If specified, then only reduce these fiber numbers;
+;                this must be a vector with unique values between 1 and
+;                the number of fibers in the plate file
+;   run1d      - Optional override value for the environment variable $RUN1D
+;   doplot     - If set, then generate plots.  Send plots to a PostScript
+;                file spDiagDebug1d-$PLATE-$MJD.ps unless /DEBUG is set.
+;   debug      - If set, then send plots to the X display and wait for
+;                a keystroke after each plot; setting /DEBUG forces /DOPLOT.
+;   chop_data  - If set, then trim wavelength range to the specified range
+;                in vacuum Ang (if a 2-element array), or to a default
+;                trim range of [3600,10400] Ang.
+;
+; OUTPUTS:
+;
+; OPTIONAL OUTPUTS:
+;
+; COMMENTS:
+;   Input files are read from the current directory.
+;   Output files are written to the subdirectory $RUN1D.
+;
+;   Names of output files are derived from PLATEFILE.
+;   For example, if PLATEFILE=&#39;spPlate-0306-51690.fits&#39;, then
+;     ZALLFILE = &#39;spZall-0306-51690.fits&#39;
+;     ZBESTFILE = &#39;spZbest-0306-51690.fits&#39;
+;     ZLINEFILE = &#39;spZline-0306-51690.fits&#39;
+;
+; EXAMPLES:
+;
+; BUGS:
+;
+; DATA FILES:
+;   $IDLSPEC2D_DIR/templates/TEMPLATEFILES
+;
+; PROCEDURES CALLED:
+;   cpbackup
+;   dfpsclose
+;   dfpsplot
+;   djs_filepath()
+;   elodie_best()
+;   fileandpath()
+;   filter_thru()
+;   mrdfits()
+;   mwrfits
+;   qaplot_fcalibvec
+;   splog
+;   skymask()
+;   speclinefit
+;   star_dvelocity()
+;   struct_addtags()
+;   sxaddpar
+;   sxdelpar
+;   sxpar()
+;   synthspec()
+;   vdispfit
+;   zfind()
+;   zrefind()
+;
+; REVISION HISTORY:
+;   28-Jun-2000  Written by D. Schlegel, Princeton
+;   2010-2011: various template-related tweaks and Z_NOQSO, A. Bolton, Utah
+;   01-Oct-2012: Adding ZNUM_NOQSO to the Z_NOQSO section, Joel Brownstein, Utah
+</pre></div>
+</div>
+</section>
+<section id="spcalib-qa-pro">
+<span id="id36"></span><h3>spcalib_qa.pro<a class="headerlink" href="#spcalib-qa-pro" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>; NAME:
+;   spcalib_qa
+;
+; PURPOSE:
+;   Compare photometric accuracy of standards
+;
+; CALLING SEQUENCE:
+;   SpCalib_QA, [run2d=, fieldid=, mjd=]
+;
+; INPUTS:
+;
+; OPTIONAL INPUTS:
+;   field       - field to include
+;   mjd         - MJD to include
+;   run2d       - RUN2D version of reduction
+;
+; OUTPUTS:
+;
+; OPTIONAL OUTPUTS:
+;
+; COMMENTS:
+;   Depends on the spAll files (either full run2d version or field-mjd version)
+;
+; EXAMPLES:
+;
+; BUGS:
+;
+; DATA FILES:
+;
+; Function Called:
+;   mpfitfun
+;   field_to_string
+;   djs_filepath
+;   mrdfits
+;   sdss_flagval
+;
+; External PROCEDURES CALLED:
+;   plot
+;   XYOUTS
+;   cpbackup
+;
+; Internal PROCEDURES CALLED:
+;   std_hist
+;
+; REVISION HISTORY:
+;   21-June-2022  Written by S. Morrison (UIUC)
+</pre></div>
+</div>
+</section>
+<section id="spspec-target-merge-pro">
+<span id="id37"></span><h3>spspec_target_merge.pro<a class="headerlink" href="#spspec-target-merge-pro" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>;+
+; NAME:
+;   spspec_target_merge
+;
+; PURPOSE:
+;   To create spSpec and spFullsky target level coadds (independent of field-mjd)
+;
+; CALLING SEQUENCE:
+;
+; INPUTS:
+;   customplan - The spPlanCustom file for the coadd
+;
+; OPTIONAL KEYWORDS:
+;   topdir - the daily coadd base directory
+;
+; OUTPUTS:
+;
+; OPTIONAL OUTPUTS:
+;
+; COMMENTS:
+;
+; EXAMPLES:
+;
+; BUGS:
+;
+; PROCEDURES CALLED:
+;
+; REVISION HISTORY:
+;
+;-
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="Dependencies.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Pipeline Dependencies</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, SDSS Collaboration
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Full Command Documention</a><ul>
+<li><a class="reference internal" href="#full-bash-and-python-command-usage">Full Bash and Python Command Usage</a></li>
+<li><a class="reference internal" href="#idl-command-usage">IDL Command Usage</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=aaf0a054"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=df1a032d"></script>
+    </body>
+</html>

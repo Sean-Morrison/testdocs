@@ -1,0 +1,34 @@
+
+sos:
+    mjd: "0"
+    fps: True
+    exposure: None
+    fitsdir: ${BOSS_SPECTRO_DATA}
+    plugDir: ${SDSSCORE_DIR}
+    controlDir: ${BOSS_SPECTRO_REDUX}/sos/${RUN2D}/${OBSERVATORY}/control
+    logdir: ${BOSS_SPECTRO_REDUX}/sos/${RUN2D}/${OBSERVATORY}/logs
+    sosdir: ${BOSS_SPECTRO_REDUX}/sos/${RUN2D}/${OBSERVATORY}
+    dlogLevel: 40
+    logLevel: 40
+    iname: {iname}_utah
+    globs: ["*"]
+    command: ""
+    pollDelay: 2
+    nosvn: True
+    nocal: True
+    bookkeep: False
+    nice: True
+    platedb: False
+    redo: True
+    catchup: False
+    utah: True
+    test: False
+    nodb: True
+    no_reject: False
+    clobber_fibermap: False
+    sdssv_sn2: False
+    arc2trace: False
+    forcea2t: False
+    pause: True
+    verbose: 6
+    termverbose: False

@@ -1,0 +1,187 @@
+general:
+    module: bhm/master
+    run2d: ${RUN2D}
+    run1d: ${RUN2D}
+    topdir: ${BOSS_SPECTRO_REDUX}
+    dailydir: ${DAILY_DIR}
+    release: sdsswork
+    remote: false
+    mjdstart: None
+    mjdend: None
+    mjd: None
+    field: None
+    fieldstart: None
+    fieldend: None
+    legacy: false
+    plates: false
+    fps: false
+    sdssv: false
+
+spplan:
+    skip2d: false
+    skip1d: false
+    clobber: false
+    override_manual: false
+    no_commissioning: false
+    no_dither: false
+    matched_flats: false
+    nomatched_arcs: false
+    minexp: 1
+    single_flat: false
+    multiple_arc: false
+    plate_epoch: false
+    quick: false
+    logfile: None
+
+readfibermap:
+    dr19: false
+    slurm:
+        mem_per_cpu: None
+        walltime: None
+        ppn: None
+
+sptrace:
+    active: True
+    logfile: None
+    verbose: false
+    clobber: false
+    override_manual: false
+    slurm:
+        active: True
+        clobber: False
+        debug: False
+        skip_plan: False
+
+spplan_epoch:
+    clobber: false
+    minexp: 1
+    logfile: None
+    abandoned: false
+    started: false
+    min_epoch_len: 0
+    
+
+spplan_target:
+    manual: false
+    batch: false
+    name: None
+    coaddfile: SDSSV_BHM_COADDS.par
+    clobber: None
+    logfile: None
+    DR: True
+    cartons: None
+    catalogids: None
+    programs: None
+    coadd_mjdstart: None
+    rerun1d: false
+    use_catid: false
+    use_firstcarton: false
+    useDB: false
+    
+slurm_fieldmerge:
+    fast: false
+    mem: 32000
+    walltime: '40:00:00'
+    daily: false
+
+
+uubatchpbs:
+    idlutils_1d: None
+    no_reject: false
+    MWM_fluxer: false
+    
+    map3d: merge3d
+    no_healpix: false
+    noxcsao: false
+    skip_specprimary: false
+    no_merge_spall: false
+    skip2d: false
+    skip1d: false
+    onestep_coadd: false
+    fibermap_clobber: false
+    saveraw: false
+    debug: false
+    no_db: false
+    fast_no_db: false
+    dr19: false
+    a2t: false
+  
+    coadd_schema:
+        custom: None
+        epoch: false
+    slurm:
+        no_write: false
+        shared: false #### True
+        fast: false
+        mem_per_cpu: None
+        walltime: None
+        nodes: 1
+        ppn: None
+        nosubmit: false
+        clobber: false
+        email: false
+    custom:
+        allsky: false
+        custom_coadd_only: false
+        custom_1dpost: false
+    
+uurundaily:
+    range_mjd: None
+    clobber: false
+    saveraw: false
+    debug: false
+    skip_plan: false
+    batch: false
+    nodb: false
+    summary: false
+    no_prep: false
+    merge3d: false
+    traceflat: false
+    no_dither: false
+    coadd_schema:
+        epoch: false
+    slurm:
+        fast: false
+        nosubmit: false
+        noslurm: false
+        monitor: false
+        pause: 300
+        walltime: '40:00:00'
+        mem_per_cpu: None
+        email: true
+        king: false
+        
+
+sos:
+    mjd: "0"
+    fps: True
+    exposure: None
+    fitsdir: '/data/spectro'
+    plugDir: ${SDSSCORE_DIR}
+    controlDir: '/home/sdss5/boss/sos/control'
+    logdir: '/home/sdss5/boss/sos/logs'
+    sosdir: '/data/boss/sos'
+    dlogLevel: 40
+    logLevel: 40
+    iname: ""
+    globs: ["*"]
+    command: ""
+    pollDelay: 2
+    nosvn: True
+    nocal: True
+    bookkeep: False
+    nice: False
+    platedb: False
+    redo: False
+    catchup: False
+    utah: False
+    test: False
+    nodb: False
+    no_reject: False
+    clobber_fibermap: False
+    sdssv_sn2: False
+    arc2trace: False
+    forcea2t: False
+    pause: False
+    verbose: 6
+    termverbose: False

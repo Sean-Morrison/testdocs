@@ -1,0 +1,22 @@
+build:
+    os: ubuntu-22.04
+    tools:
+        python: "3.12"
+    jobs:
+        pre_build:
+          - python ./docs/build_doc.py
+
+python:
+    install:
+
+
+# Don't build any extra formats
+formats:
+    - pdf
+
+python:
+  install:
+    - requirements: docs/sphinx/requirements.txt
+    - method: pip
+      path: .
+

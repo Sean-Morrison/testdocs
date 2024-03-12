@@ -8,15 +8,10 @@ build:
 
 python:
     install:
+    - requirements: docs/sphinx/requirements.txt
 
 
 # Don't build any extra formats
 formats:
     - pdf
-
-python:
-  install:
-    - requirements: docs/sphinx/requirements.txt
-    - method: pip
-      path: .
 
