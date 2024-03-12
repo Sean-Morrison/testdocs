@@ -60,6 +60,7 @@ def build_docs():
         docstr = filter('PyFITS is deprecated', docstr)
         docstr = filter('pyautogui does not seem to be available',docstr)
         docstr = filter('esutil not available!',docstr)
+        docstr = filter('No slurm package installed:',docstr)
         docstr = filter('no gaiaxpy...!',docstr)
         docs['cmd'].append({'name':ptt.basename(command), 'doc': docstr})
 
