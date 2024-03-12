@@ -18,7 +18,7 @@ except:
     print(file_path)
     bindir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'bin/')
     prodir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'pro/')
-    docdir = ptt.joinptt.dirname((ptt.dirname(file_path)),'docs/sphinx/')
+    docdir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'docs/sphinx/')
 
 
 def headline(text, adorn='='):
