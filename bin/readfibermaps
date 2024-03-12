@@ -10,8 +10,10 @@ import argparse
 import platform
 import sys
 
-from boss_drp.prep.readfibermaps import readfibermaps
-
+try:
+    from boss_drp.prep.readfibermaps import readfibermaps
+pass:
+    except
 
 if __name__ == "__main__":
 
