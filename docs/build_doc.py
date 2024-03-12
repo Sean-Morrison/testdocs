@@ -86,10 +86,10 @@ def build_docs():
         out.write(headline('Full Command Documention') + '\n')
         
         sec_hdr ='Full Bash and Python Command Usage'
-        out = sec(out, sec_hdr, data['cmd'], 'bin')
+        out = sec(out, sec_hdr, docs['cmd'], 'bin')
 
         sec_hdr ='IDL Command Usage'
-        out = sec(out, sec_hdr, data['idl'], 'idl')
+        out = sec(out, sec_hdr, docs['idl'], 'idl')
 
         out.write('\n.. highlight:: defaults\n\n')
 
