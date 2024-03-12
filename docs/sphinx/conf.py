@@ -20,7 +20,7 @@ try:
     from boss_drp import __version__
 except ModuleNotFoundError:
     from sdsstools import get_package_version
-    __version__ = get_package_version(__file__, 'boss_drp') or '0.0.1dev'
+    __version__ = get_package_version(__file__, 'testdocs') or 'dev'
 
 
 # Are we building in RTD?
