@@ -7,9 +7,10 @@ build:
           - python ./docs/build_doc.py
 
 python:
-    install:
+  install:
     - requirements: docs/sphinx/requirements.txt
-
+    - method: pip
+      path: .
 
 # Don't build any extra formats
 formats:
