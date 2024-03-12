@@ -12,3 +12,4 @@ pydl>=1.0.0
 matplotlib>=3.6.0
 pandas>=2.0.0
 sdss_semaphore>=0.2.4
+healpy>=1.16.2
