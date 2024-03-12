@@ -8,7 +8,7 @@ furo>=2021.6.18-beta.36
 sphinx-autobuild>=2021.3.14
 sphinx-copybutton>=0.3.3
 jinja2==3.0.0
-pydl>=1.1.0
+pydl>=1.0.0
 matplotlib>=3.6.0
 pandas>=2.0.0
--e .
+
