@@ -20,6 +20,8 @@ except:
     prodir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'pro/')
     docdir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'docs/sphinx/')
 
+mask = '\n.. _{name}:\n\n{name}\n{fmt}\n::\n \n    {doc}\n'
+
 
 def headline(text, adorn='='):
     return text + '\n' + adorn*len(text)
