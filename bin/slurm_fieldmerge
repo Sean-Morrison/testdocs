@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+from boss_drp.run.slurm_fieldmerge import slurm_fieldmerge
+from boss_drp import config, config_to_args
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Create daily field merge slurm job. Without access to the SDSS Slurm package, it prints the commands for manual execution')
+    parser.add_argument('--module', '-m', default = None, help = 'module file to use (ex bhm/master or bhm/v6_0_9)')
+    parser.add_argument('--walltime', '-w', default = None, help = 'Job wall time (format hh:mm:ss) default = "40:00:00"')
+    parser.add_argument('--fast', action='store_true' , help = 'use fast allocation')
+    parser.add_argument('--mem', default = None, help = 'memory in bytes')
+    parser.add_argument('--daily', action = 'store_true', help = 'only run if daily run has been run today')
+    General.add_argument('--config', help='Provide a configuration file (other options will override the values set in the config file)')
+    args = parser.parse_args()
+
+    args = config_to_args(config, args, 'slurm_fieldmerge')
+
+    if args.module is None:
+        args.module = os.getenv('MODULE', default=None)
+        if args.module is None:
+            args.module = os.getenv('RUN2D', default=None)
+
+    slurm_fieldmerge(module=args.module, walltime = args.walltime, fast = args.fast, mem = args.mem, daily = args.daily)
