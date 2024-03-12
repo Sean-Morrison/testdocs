@@ -9,9 +9,16 @@ import argparse
 import sys
 import time
 
-bindir = resource_filename('testdocs','../../bin/')
-prodir = resource_filename('testdocs','../../pro/')
-docdir = resource_filename('testdocs','../../docs/sphinx/')
+try:
+    bindir = resource_filename('testdocs','../../bin/')
+    prodir = resource_filename('testdocs','../../pro/')
+    docdir = resource_filename('testdocs','../../docs/sphinx/')
+except:
+    file_path = ptt.realpath(__file__)
+    print(file_path)
+    bindir = ptt.join(ptt.basename(file_path),'bin/')
+    prodir = ptt.join(ptt.basename(file_path),'pro/')
+    docdir = ptt.join(ptt.basename(file_path),'docs/sphinx/')
 
 
 def headline(text, adorn='='):
