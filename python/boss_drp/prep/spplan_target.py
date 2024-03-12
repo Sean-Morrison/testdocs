@@ -2,6 +2,9 @@
 import boss_drp
 from boss_drp.utils import (match, load_env, Splog)
 from boss_drp.field import field_dir
+
+splog = Splog()
+
 try:
     from sdssdb.peewee.sdss5db.targetdb import database
     test = database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
@@ -25,8 +28,6 @@ from glob import glob
 from tqdm import tqdm
 import time
 
-
-splog = Splog()
 
 idlspec2dVersion = boss_drp.__version__
 #idlutilsVersion = getoutput("idlutils_version")
