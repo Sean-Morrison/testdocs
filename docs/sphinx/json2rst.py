@@ -12,8 +12,12 @@ def main():
     
     mask = '\n.. _{name}:\n\n{name}\n{fmt}\n::\n \n    {doc}\n'
 
-    with open('../doc.json', 'r') as infile:
-        data = json.load(infile)
+    try:
+        with open('../doc.json', 'r') as infile:
+            data = json.load(infile)
+    except:
+        with open('./docs/doc.json', 'r') as infile:
+            data = json.load(infile)
 
     with open('doc.rst', 'w') as out:
         out.write(':tocdepth: 2\n\n')
