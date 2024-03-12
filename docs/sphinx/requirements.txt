@@ -8,4 +8,3 @@ furo>=2021.6.18-beta.36
 sphinx-autobuild>=2021.3.14
 sphinx-copybutton>=0.3.3
 jinja2==3.0.0
-json>=2.0.9
