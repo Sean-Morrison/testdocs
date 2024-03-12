@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import json
-from pkg_resources import resource_filename
 import glob
 import subprocess
 import os.path as ptt
@@ -10,15 +9,16 @@ import sys
 import time
 
 try:
+    from pkg_resources import resource_filename
     bindir = resource_filename('testdocs','../../bin/')
     prodir = resource_filename('testdocs','../../pro/')
     docdir = resource_filename('testdocs','../../docs/sphinx/')
 except:
     file_path = ptt.realpath(__file__)
     print(file_path)
-    bindir = ptt.join(ptt.dirname(file_path),'bin/')
-    prodir = ptt.join(ptt.dirname(file_path),'pro/')
-    docdir = ptt.join(ptt.dirname(file_path),'docs/sphinx/')
+    bindir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'bin/')
+    prodir = ptt.join(ptt.dirname(ptt.dirname(file_path)),'pro/')
+    docdir = ptt.joinptt.dirname((ptt.dirname(file_path)),'docs/sphinx/')
 
 
 def headline(text, adorn='='):
