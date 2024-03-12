@@ -4,7 +4,7 @@ build:
         python: "3.12"
     jobs:
         pre_build:
-          - python ./docs/build_doc.py
+          - PATH=$PYTHONPATH:./PYTHONPATH ; python ./docs/build_doc.py
 
 python:
   install:
