@@ -11,4 +11,7 @@ jinja2==3.0.0
 pydl>=1.0.0
 matplotlib>=3.6.0
 pandas>=2.0.0
-
+sdss-slurm>=0.1.0
+sdssdb>=0.9.0
+sdss_access>=3.3.0
+dustmaps>=1.0.10
