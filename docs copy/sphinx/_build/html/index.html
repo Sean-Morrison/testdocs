@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDLspec2D: The SDSS BOSS Data Reduction Pipeline &#8212; IDLSPEC2D  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon_sdssv.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Running a BOSS DRP Catchup Run" href="catchup.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span><img src="_static/sdssv_logo_small.png"></span>
+          IDLSPEC2D</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IDLspec2D: The SDSS BOSS Data Reduction Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catchup.html">Running the BOSS DRP Catchup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="catchup.html#daily-coadds">Daily Coadds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catchup.html#field-epoch-coadds">Field Epoch Coadds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catchup.html#custom-coadds-eg-allepoch">Custom Coadds (eg. “allepoch”)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="daily.html">Running the BOSS DRP Daily</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="daily.html#daily-run">Daily Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sos.html">SOS: The BOSS on Mountain Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc.html">Full Command Documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">IDLspec2D: The SDSS BOSS Data Reduction Pipeline</a><ul>
+<li><a class="reference internal" href="#major-changes-since-version-v6-1-x">Major changes since version v6_1_X</a></li>
+<li><a class="reference internal" href="#directory-contents">Directory Contents</a></li>
+<li><a class="reference internal" href="#setup-requirements">Setup Requirements</a><ul>
+<li><a class="reference internal" href="#running-at-the-university-of-utah-chpc">Running at the University of Utah CHPC</a></li>
+<li><a class="reference internal" href="#environmental-variables">Environmental Variables</a></li>
+<li><a class="reference internal" href="#paths">Paths</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="idlspec2d-the-sdss-boss-data-reduction-pipeline">
+<h1><a class="toc-backref" href="#id3">IDLspec2D: The SDSS BOSS Data Reduction Pipeline</a><a class="headerlink" href="#idlspec2d-the-sdss-boss-data-reduction-pipeline" title="Permalink to this heading">¶</a></h1>
+<p>This page describes the BOSS Data Reduction Pipeline <a class="reference external" href="https://github.com/sdss/idlspec2d">idlspec2d</a>.</p>
+<p>The BOSS DRP (officially known as IDLspec2D) is really a series of steps run in sequence. There are some initial steps to produce the plans and supplementary information required. After which, uubatchpbs is used to produce the redux scripts. These scripts are really a wrapper script designed to run each of the individual steps on a field-mjd basis by the slurm manager at CHPC (Utah) or manually on any computer. Starting with the v6_2_x version of the pipeline, the internal python commands have been organized into a boss_drp package within the IDLspec2D GitHub repo.</p>
+<p>The Pipeline can be run in various ways, where the catchup method is designed to run a large number of MJDs in a short time and the daily run method is designed to run for 1 (or a few) MJDs.</p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title"><strong>Table of Contents</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#idlspec2d-the-sdss-boss-data-reduction-pipeline" id="id3">IDLspec2D: The SDSS BOSS Data Reduction Pipeline</a></p>
+<ul>
+<li><p><a class="reference internal" href="#major-changes-since-version-v6-1-x" id="id4">Major changes since version v6_1_X</a></p></li>
+<li><p><a class="reference internal" href="#directory-contents" id="id5">Directory Contents</a></p></li>
+<li><p><a class="reference internal" href="#setup-requirements" id="id6">Setup Requirements</a></p>
+<ul>
+<li><p><a class="reference internal" href="#running-at-the-university-of-utah-chpc" id="id7">Running at the University of Utah CHPC</a></p></li>
+<li><p><a class="reference internal" href="#environmental-variables" id="id8">Environmental Variables</a></p></li>
+<li><p><a class="reference internal" href="#paths" id="id9">Paths</a></p></li>
+<li><p><a class="reference internal" href="#dependencies" id="id10">Dependencies</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="major-changes-since-version-v6-1-x">
+<h2><a class="toc-backref" href="#id4">Major changes since version v6_1_X</a><a class="headerlink" href="#major-changes-since-version-v6-1-x" title="Permalink to this heading">¶</a></h2>
+<p>The idlspec2d package received a cleanup of old unused scripts and reorganized the internal python functions into an internal boss_drp python package</p>
+</div>
+<div class="section" id="directory-contents">
+<h2><a class="toc-backref" href="#id5">Directory Contents</a><a class="headerlink" href="#directory-contents" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>bin</strong>:</p></li>
+<li><p><strong>catfiles</strong>:</p></li>
+<li><p><strong>datamodel</strong>:</p></li>
+<li><p><strong>docs</strong>:</p></li>
+<li><p><strong>etc</strong>:</p></li>
+<li><p><strong>examples</strong>:</p></li>
+<li><p><strong>include</strong>:</p></li>
+<li><p><strong>lib</strong>:</p></li>
+<li><p><strong>Makefile</strong>:</p></li>
+<li><p><strong>opfiles</strong>:</p></li>
+<li><p><strong>pro</strong>:</p></li>
+<li><p><strong>python</strong>:</p></li>
+<li><p><strong>src</strong>:</p></li>
+<li><p><strong>templates</strong>:</p></li>
+<li><p><strong>ups</strong>:</p></li>
+</ul>
+</div>
+<div class="section" id="setup-requirements">
+<span id="packaging-section-v2"></span><h2><a class="toc-backref" href="#id6">Setup Requirements</a><a class="headerlink" href="#setup-requirements" title="Permalink to this heading">¶</a></h2>
+<p>A number of system environmental variables and paths are required to run the BOSS DRP.</p>
+<div class="section" id="running-at-the-university-of-utah-chpc">
+<h3><a class="toc-backref" href="#id7">Running at the University of Utah CHPC</a><a class="headerlink" href="#running-at-the-university-of-utah-chpc" title="Permalink to this heading">¶</a></h3>
+<p>At Utah, modules (github.com/sdss/sdss_modules) are used to maintain the the required packages and paths. For the BOSS pipeline, the bhm modules are used to manage these for the BOSS pipeline.</p>
+</div>
+<div class="section" id="environmental-variables">
+<h3><a class="toc-backref" href="#id8">Environmental Variables</a><a class="headerlink" href="#environmental-variables" title="Permalink to this heading">¶</a></h3>
+<p>export DATABASE_PROFILE=”pipelines”
+export RUN2D=”v6_1_2”
+export RUN1D=”v6_1_2”
+export BOSS_SPECTRO_REDUX=”/uufs/chpc.utah.edu/common/home/sdss50/sdsswork/bhm/boss/spectro/redux”
+export SDHDRFIX_DIR=”/uufs/chpc.utah.edu/common/home/sdss50/software/git/sdss/sdsscore_test/main”
+export IDLSPEC2D_DIR=”/uufs/chpc.utah.edu/common/home/sdss50/software/git/sdss/idlspec2d/$RUN2D”
+export SDSSCORE_DIR=”/uufs/chpc.utah.edu/common/home/sdss50/software/git/sdss/sdsscore_test/main”</p>
+</div>
+<div class="section" id="paths">
+<h3><a class="toc-backref" href="#id9">Paths</a><a class="headerlink" href="#paths" title="Permalink to this heading">¶</a></h3>
+<p>export IDL_PATH=”$IDL_PATH:$IDLSPEC2D_DIR”
+export PATH=”$PATH:$IDLSPEC2D_DIR/bin”
+export PYTHONPATH=”$PYTHONPATH:$IDLSPEC2D_DIR/python”</p>
+</div>
+<div class="section" id="dependencies">
+<h3><a class="toc-backref" href="#id10">Dependencies</a><a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>idl</p></li>
+<li><p>python(3.7-3.9)</p></li>
+<li><dl class="simple">
+<dt>SDSS Collaboration Package Dependencies</dt><dd><ul>
+<li><p><a class="reference external" href="https://github.com/sdss/idlutils">idlutils</a>: idlutils is a collection of IDL functions and routines used by a variety of SDSS software.</p></li>
+<li><p><a class="reference external" href="https://github.com/sdss/sdssdb/">sdssdb</a>: sdssdb contains the source catalogs, targeting catalogs, and operational databases.</p></li>
+<li><p><a class="reference external" href="https://github.com/sdss/semaphore">semaphore</a>: provides codes and reference files to decode and understand the sdss_target_flags</p></li>
+<li><p><a class="reference external" href="https://github.com/sdss/tree">sdss-tree</a>: provides environment variables to manage paths for SDSS data as they organized on the Science Archive Server (SAS)</p></li>
+<li><p><a class="reference external" href="https://github.com/sdss/sdss_access">sdss_access</a>: provides a convenient way of navigating local and remote file system paths from the Science Archive Server (SAS)</p></li>
+<li><p><a class="reference external" href="https://github.com/holtzmanjon/pyvista">pyVista</a>:</p></li>
+<li><p><a class="reference external" href="https://github.com/sdss/slurm">SDSS Slurm</a>: Required for use of uurundaily at Utah, all other command can be manually (at Utah or elsewhere) run without access to the slurm manager provided by this package</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">`</span></a>SDSS Product Dependencies</p></li>
+<li><p><a class="reference external" href="https://svn.sdss.org/public/data/eboss/elodie/">elodie</a>: A database of high and medium-resolution stellar spectra (Prugniel+, 2001) used by spec1d to classify spectra and determine stellar parameters.</p></li>
+<li><p><a class="reference external" href="https://svn.sdss.org/public/data/sdss/catalogs/dust/">dust</a>: A catalog of dust extinction models, including the SFD model.</p></li>
+<li><p><a class="reference external" href="https://svn.sdss.org/public/data/sdss/speclog/trunk/">speclog</a>: speclog is an SDSS product that contains information about SDSS BOSS plate operations including seeing measured by the guides (guiderMon-{MJD}.par, plate plug maps (plPlugMapM-{plateid}-{mjd}-{plugid}.par, and plate header correction files to change the header exposure values (sdHdrFix-{mjd}.par)</p></li>
+<li><p><a class="reference external" href="https://svn.sdss.org/public/data/sdss/platelist/trunk/">platelist</a>: platelist is an SDSS product that contains information on the plate designs and plugging. The plateHoles files include additional metadata associated with the targets on a plate</p></li>
+<li><p><a class="reference external" href="https://svn.sdss.org/public/data/sdss/specflat/">specflat</a>: specflat is an SDSS product that contains master calibration frames and bad pixel masks for use in the idlspec2d pipeline.</p></li>
+<li><p><a class="reference external" href="https://cdn.gea.esac.esa.int/Gaia/gdr2/">gaia/dr2</a>: idlspec2d utilizes gaia_source/csv to calculate the distance to standard stars from GAIA DR2 proper motion.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>External Dependencies</dt><dd><ul>
+<li><p><a class="reference external" href="https://pydl.readthedocs.io/en/latest/index.html">pyDL</a>: a package that consists of python replacements for IDL function, both built-in and from external astronomical libraries</p></li>
+<li><p><a class="reference external" href="https://github.com/gregreen/dustmaps">dustmaps</a>: provides a unified interface for several 2D and 3D maps of interstellar dust reddening and extinction. idlspec2d makes use of the Bayestar 2015 dustmaps (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2015ApJ...810...25G">Green, Schlafly, Finkbeiner et al. 2015</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/mkounkel/pyxcsao">PyXCSAO</a>: a python package designed to replicate the functionality of <a class="reference external" href="http://tdc-www.harvard.edu/iraf/rvsao/xcsao/xcsao.html">IRAF XCSAO</a>.</p></li>
+<li><p><a class="reference external" href="https://numpy.org/">numpy</a>: a standard Python package for arrays and high-level mathematical functions</p></li>
+<li><p><a class="reference external" href="https://www.astropy.org/">astropy</a>: a collection of astronomy packages written in Python</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a>: a python plotting library</p></li>
+<li><p><a class="reference external" href="https://healpy.readthedocs.io/en/latest/">healpy</a>: a Python package based on the Hierarchical Equal Area isoLatitude Pixelization (HEALPix) scheme</p></li>
+<li><p><a class="reference external" href="https://tqdm.github.io/">tqdm</a>: a progress bar for Python</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a>: a python package designed for data manipulation and analysis</p></li>
+<li><p><a class="reference external" href="https://www.h5py.org/">h5py</a>: a python interface between numpy and HDF5 data</p></li>
+<li><p><a class="reference external" href="https://scipy.org/">scipy</a>: a python package for scientific and technical computing</p></li>
+<li><p><a class="reference external" href="https://pillow.readthedocs.io/en/stable/index.html">pillow</a>: a python image file processing library</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/termcolor/">termcolor</a>: a python package for color formatting of terminal outputs (not required but recommended)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IDLspec2D: The SDSS BOSS Data Reduction Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="catchup.html">Running the BOSS DRP Catchup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="catchup.html#daily-coadds">Daily Coadds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#build-the-spplan-files">build the spplan files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#build-fibermap-files-optional-but-recommended">build fibermap files (<em>optional but recommended</em>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#build-sptracetab-files">build spTraceTab files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#run-daily-coadd">Run Daily Coadd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#build-daily-summary-files">Build Daily Summary Files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="catchup.html#field-epoch-coadds">Field Epoch Coadds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#id1">build the spplan files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#run-the-epoch-coadd">Run the epoch Coadd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#build-epoch-summary-files">Build Epoch Summary Files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="catchup.html#custom-coadds-eg-allepoch">Custom Coadds (eg. “allepoch”)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#managing-the-schema">Managing the schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#id2">build the spplan files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#build-the-spfullsky-files">Build the spFullSky files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#run-1d-analysis-and-post-processing-steps">run 1d analysis and post processing steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="catchup.html#build-custom-coadd-summary-files">Build Custom Coadd Summary Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="daily.html">Running the BOSS DRP Daily</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="daily.html#daily-run">Daily Run</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="daily.html#crontab-at-utah">Crontab at Utah</a></li>
+<li class="toctree-l3"><a class="reference internal" href="daily.html#manual-using-uurundaily-at-utah">Manual Using uurundaily at Utah</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="daily.html#run-for-any-new-mjds-if-a-module-paths-are-preloaded">Run for any new MJDS (if a module/paths are preloaded)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="daily.html#run-for-a-set-mjd-if-a-module-paths-are-preloaded-does-not-update-daily-etc-nextmjd-par">Run for a set MJD (if a module/paths are preloaded) - Does not update $daily/etc/nextmjd.par</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sos.html">SOS: The BOSS on Mountain Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc.html">Full Command Documention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2024, SDSS Collaboration.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
