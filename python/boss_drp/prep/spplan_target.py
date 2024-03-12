@@ -2,9 +2,12 @@
 import boss_drp
 from boss_drp.utils import (match, load_env, Splog)
 from boss_drp.field import field_dir
-from sdssdb.peewee.sdss5db.targetdb import database
-test = database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
-from sdssdb.peewee.sdss5db.targetdb import CartonToTarget, Carton, Target
+try:
+    from sdssdb.peewee.sdss5db.targetdb import database
+    test = database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
+    from sdssdb.peewee.sdss5db.targetdb import CartonToTarget, Carton, Target
+except:
+    splog.info('WARNING: No SDSSDB access - Defaulting to no_db')
 from sdss_semaphore.targeting import TargetingFlags
 
 import numpy as np

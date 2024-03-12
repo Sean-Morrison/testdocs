@@ -61,6 +61,8 @@ def build_docs():
         docstr = filter('pyautogui does not seem to be available',docstr)
         docstr = filter('esutil not available!',docstr)
         docstr = filter('No slurm package installed:',docstr)
+        docstr = filter('ERROR: dustmaps is not installed',docstr)
+        docstr = filter('WARNING: No SDSSDB access - Defaulting to no_db',docstr)
         docstr = filter('no gaiaxpy...!',docstr)
         docs['cmd'].append({'name':ptt.basename(command), 'doc': docstr})
 
