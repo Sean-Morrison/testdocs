@@ -7,7 +7,7 @@ build:
 #    version: "3.12"
 #    setup_py_install: false
 
-requirements_file: docs/sphinx/requirements_template_docs.txt
+#requirements_file: docs/sphinx/requirements_template_docs.txt
 
 # Don't build any extra formats
 formats:
