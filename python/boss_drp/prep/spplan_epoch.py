@@ -9,6 +9,7 @@ splog = Splog()
 try:
     from sdssdb.peewee.sdss5db import opsdb, targetdb
     opsdb.database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
+    import sdssdb
     SDSSDBVersion=sdssdb.__version__
 except:
     if load_env('DATABASE_PROFILE', default='pipelines').lower() in ['pipelines','operations']:
@@ -33,9 +34,6 @@ from sys import argv
 from collections import OrderedDict
 from subprocess import Popen, PIPE, getoutput
 import time
-import sdssdb
-
-
 
 idlspec2dVersion = boss_drp.__version__
 #idlutilsVersion = getoutput("idlutils_version")

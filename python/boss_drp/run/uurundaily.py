@@ -429,7 +429,7 @@ def build_run(skip_plan, logdir, obs, mj, run2d, run1d, idlspec2d_dir, options, 
 
 def uurundaily(module, obs, mjd = None, clobber=False, fast = False, saveraw=False, skip_plan=False,
               pause=300, nosubmit=False, noslurm=False, batch=False, debug=False, nodb=False, epoch=False,
-              build_summary=False, monitor=False, merge3d=False, no_dither=False, traceflat=False, email=email,
+              build_summary=False, monitor=False, merge3d=False, no_dither=False, traceflat=False, email=True,
               from_domain="chpc.utah.edu", no_prep = False, config=None, walltime='40:00:00', mem_per_cpu=8000):
  
     run2d, run1d, topdir, boss_spectro_data, idlspec2d_dir, king, mem_per_cpu, shared = read_module(mem_per_cpu)
