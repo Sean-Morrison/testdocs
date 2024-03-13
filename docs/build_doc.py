@@ -10,7 +10,8 @@ import sys
 import time
 
 environ['DATABASE_PROFILE'] = 'READTHEDOCS'
-environ['IDLUTILS_DIR'] = ptt.join(getenv('READTHEDOCS_VIRTUALENV_PATH'),'idlutils')
+if getenv('IDLUTILS_DIR') is None:
+    environ['IDLUTILS_DIR'] = ptt.join(getenv('READTHEDOCS_VIRTUALENV_PATH'),'idlutils')
 
 
 try:
@@ -73,14 +74,14 @@ def build_docs():
         docstr = filter('ERROR: dustmaps is not installed',docstr)
         #docstr = filter('WARNING: No SDSSDB access - Defaulting to no_db',docstr)
         docstr = filter('Environmental Varable IDLUTILS_DIR must be set',docstr)
-        docstr = filter('SyntaxWarning',docstr)
+        #docstr = filter('SyntaxWarning',docstr)
         docstr = filter('WARNING: No SDSSDB access',docstr)
         docstr = filter('No slurm package',docstr)
-        docstr = filter('[\w]*',docstr)
-        docstr = filter("value = '('+value+'$)|('+value+'\W)",docstr)
-        docstr = filter(".replace('_','\_')",docstr)
-        docstr = filter("elif ((survey.lower()", docstr)
-        docstr = filter("re.search", docstr)
+        #docstr = filter('[\w]*',docstr)
+        #docstr = filter("value = '('+value+'$)|('+value+'\W)",docstr)
+        #docstr = filter(".replace('_','\_')",docstr)
+        #docstr = filter("elif ((survey.lower()", docstr)
+        #docstr = filter("re.search", docstr)
         
         
         docstr = filter('no gaiaxpy...!',docstr)
