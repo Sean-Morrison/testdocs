@@ -60,6 +60,10 @@ def build_docs():
     docs['cmd'] = []
     for command in glob.glob(bindir+'/*'):
         docstr = subprocess.getoutput(command+' -h')
+        
+        if command in ['fieldmerge','fieldlist']:
+            print(docstr)
+        
         docstr = filter('Overriding default configuration',docstr)
         docstr = filter('PyFITSDeprecationWarning',docstr)
         docstr = filter('PyFITS is deprecated', docstr)

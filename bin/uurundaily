@@ -42,7 +42,6 @@ if __name__ == '__main__' :
     parser.add_argument('--traceflat', action='store_true', help='Build and use TraceFlats')
     parser.add_argument('--no_prep', action='store_true', help='Skip building TraceFlats and spfibermaps before pipeline run')
     parser.add_argument('--no_dither', action='store_true', help='Skip Dither Engineering Fields')
-    parser.add_argument('--no_dither', action='store_true', help='Skip Dither Engineering Fields')
     parser.add_argument('--walltime', help='Wall time in hours', type=str)
     parser.add_argument('--mem_per_cpu', help='Memory allocated per CPU', type=str)
 
