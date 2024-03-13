@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 import boss_drp
 from boss_drp.prep.GetconfSummary import get_confSummary
 from boss_drp.field import field_to_string, Fieldtype, field_dir
 from boss_drp.utils import Splog, load_env, get_dirs
 
-from sdssdb.peewee.sdss5db import opsdb, targetdb
+splog = Splog()
+
+try:
+    from sdssdb.peewee.sdss5db import opsdb, targetdb
+    opsdb.database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
+    SDSSDBVersion=sdssdb.__version__
+except:
+    if load_env('DATABASE_PROFILE', default='pipelines').lower() in ['pipelines','operations']:
+        splog.log('ERROR: No SDSSDB access')
+        exit()
+    else:
+        splog.log('WARNING: No SDSSDB access')
+
 from sdss_access.path import Path
 from sdss_access import Access
 
@@ -24,20 +35,10 @@ from subprocess import Popen, PIPE, getoutput
 import time
 import sdssdb
 
-splog = Splog()
 
-try:
-    opsdb.database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
-except:
-    if load_env('DATABASE_PROFILE', default='pipelines').lower() in ['pipelines','operations']:
-        splog.log('ERROR: No SDSSDB access')
-        exit()
-    else:
-        splog.log('WARNING: No SDSSDB access')
 
 idlspec2dVersion = boss_drp.__version__
 #idlutilsVersion = getoutput("idlutils_version")
-SDSSDBVersion=sdssdb.__version__
 
 
 
