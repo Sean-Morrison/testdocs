@@ -36,6 +36,8 @@ oplimit_filename=''
 chunkdata = None
 pulic_plate_data = None
 spPlatelistMessage =False
+
+sdss.set_maskbits(maskbits_file=os.getenv("IDLUTILS_DIR")+"/data/sdss/sdssMaskbits.par")
 try:
     sdss.set_maskbits(maskbits_file=os.getenv("IDLUTILS_DIR")+"/data/sdss/sdssMaskbits.par")
 except:
