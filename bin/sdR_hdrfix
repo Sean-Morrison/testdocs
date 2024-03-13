@@ -35,6 +35,8 @@ if __name__ == '__main__' :
         else: 
             obs_req = False
             parser.add_argument('--obs', help = 'Set Observatory (default:'+getenv('OBSERVATORY')+')', default=getenv('OBSERVATORY'), required=False, choices=['APO','LCO'])
+    else:
+        parser.add_argument('--obs', help=argparse.SUPPRESS)
 
     parser.add_argument('--clobber', help='clobber sdHdrFix file', action='store_true')
 
