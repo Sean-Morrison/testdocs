@@ -15,4 +15,4 @@ sdss_semaphore>=0.2.4
 healpy>=1.16.2
 sdss_access>=3.0.3
 pyxcsao>=0.2
-pyvista[devel] @ git+https://github.com/holtzmanjon/pyvista.git
+pyvista @ git+https://github.com/holtzmanjon/pyvista.git@devel
