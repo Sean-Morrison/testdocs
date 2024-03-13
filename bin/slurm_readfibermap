@@ -41,10 +41,9 @@ if __name__ == "__main__":
         obs = ['apo','lco']
                               
     if args.module is not None:
-        try:
-            module = load_module()
-            module('purge')
-            module('load', args.module)
+        module = load_module()
+        module('purge')
+        module('load', args.module)
         if args.run2d is None:
             args.run2d = load_env('RUN2D')
         if args.topdir is None:
