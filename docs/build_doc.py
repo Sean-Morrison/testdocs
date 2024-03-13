@@ -4,13 +4,13 @@ import json
 import glob
 import subprocess
 import os.path as ptt
-from os import environ
+from os import environ, getenv
 import argparse
 import sys
 import time
 
 environ['DATABASE_PROFILE'] = 'READTHEDOCS'
-environ['IDLUTILS_DIR'] = 'READTHEDOCS'
+environ['IDLUTILS_DIR'] = ptt.join(getenv('READTHEDOCS_VIRTUALENV_PATH'),'idlutils')
 
 
 try:
