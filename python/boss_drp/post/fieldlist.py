@@ -40,7 +40,7 @@ try:
     sdss.set_maskbits(maskbits_file=os.getenv("IDLUTILS_DIR")+"/data/sdss/sdssMaskbits.par")
 except:
     splog.log('Environmental Varable IDLUTILS_DIR must be set')
-    
+    exit()
 
 
 def getquality(row,basehtml,epoch=False, dereddened_sn2=False, rawsn2=False):
