@@ -16,7 +16,6 @@ try:
     from slurm import queue
 except:
     print('No slurm package')
-    sys.exit()
 from os import getenv, makedirs, popen
 import os.path as ptt
 from pydl.pydlutils.yanny import yanny, write_table_yanny

@@ -67,10 +67,11 @@ def build_docs():
         docstr = filter('esutil not available!',docstr)
         docstr = filter('No slurm package installed:',docstr)
         docstr = filter('ERROR: dustmaps is not installed',docstr)
-        docstr = filter('WARNING: No SDSSDB access - Defaulting to no_db',docstr)
+        #docstr = filter('WARNING: No SDSSDB access - Defaulting to no_db',docstr)
         docstr = filter('Environmental Varable IDLUTILS_DIR must be set',docstr)
         docstr = filter('SyntaxWarning',docstr)
-        
+        docstr = filter('WARNING: No SDSSDB access',docstr)
+        docstr = filter('No slurm package',dicstr)
         docstr = filter('[\w]*',docstr)
         docstr = filter("value = '('+value+'$)|('+value+'\W)",docstr)
         docstr = filter(".replace('_','\_')",docstr)

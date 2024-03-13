@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 from boss_drp.run.uurundaily import uurundaily, parseNumList
 from boss_drp import config, config_to_args
-
+try:
+    from slurm import queue
+    hasslurm=True
+except:
+    hasslurm=False
 import argparse
 import os.path as ptt
 import sys
@@ -43,7 +47,9 @@ if __name__ == '__main__' :
     parser.add_argument('--mem_per_cpu', help='Memory allocated per CPU', type=str)
 
     args = parser.parse_args()
-            
+    
+    if not hasslurm:
+        exit()
     args, config = config_to_args(config, args, ['uurundaily'], slurm=True, update_config = True)
 
     if args.lco is True:
