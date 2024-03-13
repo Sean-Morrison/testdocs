@@ -13,7 +13,8 @@ except:
         return(text)
 
 if __name__ == '__main__' :
-    msg = "\n    "+colored("At current only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red')
+    msg  = "\n    "+colored("At current only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red')
+    msg2 = "\n    "+colored("At current only use if still exposing or don't run SOS after for Science Frames\n     (skip and note in Night Log (and/or email) if uncertain)",'red')
 
 
     formatter = lambda prog: argparse.HelpFormatter(prog,max_help_position=60)
@@ -46,7 +47,7 @@ if __name__ == '__main__' :
 
     parser.add_argument('--cameras', type=str.lower, choices=cam, default='??', help='Cameras for hdr update (?? for all cameras) [default:??]')
 
-    qualgroup = parser.add_argument_group("Optional Quality Update (exclusive)"+msg)
+    qualgroup = parser.add_argument_group("Optional Quality Update (exclusive)"+msg2)
     qualgroup.add_argument('--bad', '-b', help = 'flag as quality=bad', action = 'store_true')
     qualgroup.add_argument('--test', '-t', help = 'flag as quality=test', action = 'store_true')
 
@@ -66,10 +67,10 @@ if __name__ == '__main__' :
     lampgroup.add_argument('--flat',      help = 'short cut to set FF = 1 1 1 1 & FFS =  1 1 1 1 1 1 1 1 ', action = 'store_true')
     lampgroup.add_argument('--hartmann',type=str.capitalize, choices = ['Out', 'Right', 'Left', 'Closed'], help='Hartmann Door Status')
 
-    commongroup = parser.add_argument_group("Optional Common keys to Update"+msg)
+    commongroup = parser.add_argument_group("Optional Common keys to Update"+msg2)
     commongroup.add_argument('--quality', type=str.lower, choices=['excellent', 'test', 'bad'], help = 'Set Quality flat of exposures')
 
-    specialgroup = parser.add_argument_group("Optional Specialized Keys to Update \n    "+colored(" Only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red'))
+    specialgroup = parser.add_argument_group("Optional Specialized Keys to Update "+msg) #"'\n    "+colored(" Only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red'))
     specialgroup.add_argument('--flavor',  type=str.lower, choices=['bias','dark','flat','arc','science','smear'], help='Type/Flavor of exposure')
     specialgroup.add_argument('--exptime', type=float, help='Exposure length (s)')
     specialgroup.add_argument('--tai-beg', type=float, help='Starting time (tai) of exposure')
@@ -78,7 +79,7 @@ if __name__ == '__main__' :
     specialgroup.add_argument('--confid',  type=int, metavar='CONFIGID', help="ConfigureID")
     specialgroup.add_argument('--designid',type=int, metavar='DESIGNID', help='DesignID')
 
-    keygroup = parser.add_argument_group("Manually update a key \n    "+colored(" Only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red'))
+    keygroup = parser.add_argument_group("Manually update a key ")+msg)#\n    "+colored(" Only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red'))
     keygroup.add_argument('--key', '-k', help = 'header keyword to update (required if value is set)', default=None)
     keygroup.add_argument('--value', '-v', help = 'updated header keyword value (required if key is set)', default=None)
 
