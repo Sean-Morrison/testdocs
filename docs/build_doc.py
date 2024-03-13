@@ -71,7 +71,7 @@ def build_docs():
         docstr = filter('Environmental Varable IDLUTILS_DIR must be set',docstr)
         docstr = filter('SyntaxWarning',docstr)
         docstr = filter('WARNING: No SDSSDB access',docstr)
-        docstr = filter('No slurm package',dicstr)
+        docstr = filter('No slurm package',docstr)
         docstr = filter('[\w]*',docstr)
         docstr = filter("value = '('+value+'$)|('+value+'\W)",docstr)
         docstr = filter(".replace('_','\_')",docstr)

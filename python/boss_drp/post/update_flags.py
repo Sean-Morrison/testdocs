@@ -2,9 +2,18 @@
 from boss_drp.prep.readfibermaps import get_targetflags
 from boss_drp.utils import (load_env, Splog)
 
-from sdssdb.peewee.sdss5db.targetdb import database
-test = database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
-from sdssdb.peewee.sdss5db.targetdb import CartonToTarget, Carton, Version, Mapper, Target
+splog = Splog()
+
+try:
+    from sdssdb.peewee.sdss5db.targetdb import database
+    test = database.set_profile(load_env('DATABASE_PROFILE', default='pipelines'))
+    from sdssdb.peewee.sdss5db.targetdb import CartonToTarget, Carton, Version, Mapper, Target
+except:
+    if load_env('DATABASE_PROFILE', default='pipelines').lower() in ['pipelines','operations']:
+        splog.log('ERROR: No SDSSDB access')
+        exit()
+    else:
+        splog.log('WARNING: No SDSSDB access')
 
 import argparse
 from astropy.table import Table, Column
@@ -17,7 +26,6 @@ import time
 import shutil
 
 
-splog = Splog()
 
 
 def get_Targeting_file(run2d, boss_spectro_redux=getenv('BOSS_SPECTRO_REDUX')):
