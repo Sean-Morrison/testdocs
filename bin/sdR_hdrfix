@@ -13,7 +13,7 @@ except:
         return(text)
 
 if __name__ == '__main__' :
-    msg = "\n    "+colored("At current only use if still exposing or don't run SOS after (skip and note in Night Log (and/or email) if uncertain)",'red')
+    msg = "\n    "+colored("At current only use if still exposing or don't run SOS after\n (skip and note in Night Log (and/or email) if uncertain)",'red')
 
 
     formatter = lambda prog: argparse.HelpFormatter(prog,max_help_position=60)
