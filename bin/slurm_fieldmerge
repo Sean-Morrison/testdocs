@@ -12,7 +12,7 @@ if __name__ == "__main__":
     parser.add_argument('--fast', action='store_true' , help = 'use fast allocation')
     parser.add_argument('--mem', default = None, help = 'memory in bytes')
     parser.add_argument('--daily', action = 'store_true', help = 'only run if daily run has been run today')
-    General.add_argument('--config', help='Provide a configuration file (other options will override the values set in the config file)')
+    parser.add_argument('--config', help='Provide a configuration file (other options will override the values set in the config file)')
     args = parser.parse_args()
 
     args = config_to_args(config, args, 'slurm_fieldmerge')
