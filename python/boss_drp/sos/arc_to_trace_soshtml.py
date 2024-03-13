@@ -61,7 +61,7 @@ def soshtml(mjd, obs, sosdir):
     try:
         now = datetime.datetime.utcnow()
     except:
-        now = datetime.datetime.now(datetime.UTC))
+        now = datetime.datetime.now(datetime.UTC)
     nowstr = now.strftime("%a %b %d %H:%M:%S %Y UTC")
     header.append('<H4> This page last updated <B> {:s}</B></H4>'.format(nowstr))
     header = ' \n'.join(header)
