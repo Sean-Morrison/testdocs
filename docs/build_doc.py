@@ -64,6 +64,7 @@ def build_docs():
         docstr = filter('ERROR: dustmaps is not installed',docstr)
         docstr = filter('WARNING: No SDSSDB access - Defaulting to no_db',docstr)
         docstr = filter('Environmental Varable IDLUTILS_DIR must be set',docstr)
+        docstr = filter('Syntax Warning',docstr)
         docstr = filter('no gaiaxpy...!',docstr)
         docs['cmd'].append({'name':ptt.basename(command), 'doc': docstr})
 
