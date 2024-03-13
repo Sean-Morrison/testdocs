@@ -550,7 +550,7 @@ def uurundaily(module, obs, mjd = None, clobber=False, fast = False, saveraw=Fal
                           topdir, today, plates = False, epoch=epoch, build_summary=build_summary,
                           pause=pause, monitor=monitor, noslurm=noslurm, no_dither=no_dither, config=config,
                           from_domain=from_domain, traceflat=traceflat, no_prep = no_prep, clobber = clobber,
-                          dailydir = daily_dir
+                          dailydir = daily_dir)
 
         else:
             for mj in mjd:

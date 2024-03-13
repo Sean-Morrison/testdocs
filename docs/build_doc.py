@@ -8,6 +8,10 @@ import argparse
 import sys
 import time
 
+environ['DATABASE_PROFILE'] = 'READTHEDOCS'
+environ['IDLUTILS_DIR'] = ''
+
+
 try:
     from pkg_resources import resource_filename
     bindir = resource_filename('testdocs','../../bin/')
