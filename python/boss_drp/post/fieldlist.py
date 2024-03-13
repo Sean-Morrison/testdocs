@@ -24,7 +24,8 @@ import gc
 
 splog = Splog()
 
-
+import pydl
+print(pydl.__file__)
 
 # this version does not
 # - remove partial epochs
