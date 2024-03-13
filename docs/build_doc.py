@@ -10,7 +10,7 @@ import sys
 import time
 
 environ['DATABASE_PROFILE'] = 'READTHEDOCS'
-environ['IDLUTILS_DIR'] = ''
+environ['IDLUTILS_DIR'] = 'READTHEDOCS'
 
 
 try:
@@ -58,7 +58,7 @@ def build_docs():
     docs = {}
 
     docs['cmd'] = []
-    for command in glob.glob(bindir+'/*'):
+    for command in sorted(glob.glob(bindir+'/*'), key=ptt.basename):
         docstr = subprocess.getoutput(command+' -h')
         
         if ptt.basename(command) in ['fieldmerge','fieldlist']:
