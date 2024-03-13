@@ -79,7 +79,7 @@ if __name__ == '__main__' :
     specialgroup.add_argument('--confid',  type=int, metavar='CONFIGID', help="ConfigureID")
     specialgroup.add_argument('--designid',type=int, metavar='DESIGNID', help='DesignID')
 
-    keygroup = parser.add_argument_group("Manually update a key ")+msg)#\n    "+colored(" Only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red'))
+    keygroup = parser.add_argument_group("Manually update a key "+msg)#\n    "+colored(" Only use if still exposing or don't run SOS after\n     (skip and note in Night Log (and/or email) if uncertain)",'red'))
     keygroup.add_argument('--key', '-k', help = 'header keyword to update (required if value is set)', default=None)
     keygroup.add_argument('--value', '-v', help = 'updated header keyword value (required if key is set)', default=None)
 
