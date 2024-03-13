@@ -61,7 +61,7 @@ def build_docs():
     for command in glob.glob(bindir+'/*'):
         docstr = subprocess.getoutput(command+' -h')
         
-        if command in ['fieldmerge','fieldlist']:
+        if ptt.basename(command) in ['fieldmerge','fieldlist']:
             print(docstr)
         
         docstr = filter('Overriding default configuration',docstr)
