@@ -5,7 +5,7 @@ build:
     jobs:
         pre_build:
           - git clone https://github.com/sdss/idlutils.git $READTHEDOCS_VIRTUALENV_PATH/idlutils
-          - export PYTHONPATH=$PYTHONPATH:./python/ ; echo $PYTHONPATH; python ./docs/build_doc.py
+          - export PYTHONPATH=$PYTHONPATH:./python/ ; export PYTHONWARNINGS="ignore" ; echo $PYTHONPATH; python ./docs/build_doc.py
 
 python:
   install:
