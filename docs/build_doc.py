@@ -65,6 +65,14 @@ def build_docs():
         docstr = filter('WARNING: No SDSSDB access - Defaulting to no_db',docstr)
         docstr = filter('Environmental Varable IDLUTILS_DIR must be set',docstr)
         docstr = filter('SyntaxWarning',docstr)
+        
+        docstr = filter('[\w]*',docstr)
+        docstr = filter("value = '('+value+'$)|('+value+'\W)",docstr)
+        docstr = filter(".replace('_','\_')",docstr)
+        docstr = filter("elif ((survey.lower()", docstr)
+        docstr = filter("re.search", docstr)
+        
+        
         docstr = filter('no gaiaxpy...!',docstr)
         docs['cmd'].append({'name':ptt.basename(command), 'doc': docstr})
 

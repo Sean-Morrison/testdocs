@@ -405,7 +405,7 @@ def build_run(skip_plan, logdir, obs, mj, run2d, run1d, idlspec2d_dir, options, 
                      ' --mjd '+' '.join(np.asarray(mj).astype(str).tolist()))
     logger.info('')
     
-    args = dict(**options, obs=obs, run2d = run2d, run1d = run1d, topdir = topdir, mjd=mj, logger=logger
+    args = dict(**options, obs=obs, run2d = run2d, run1d = run1d, topdir = topdir, mjd=mj, logger=logger)
     
     queue1 = uubatchpbs()
 
