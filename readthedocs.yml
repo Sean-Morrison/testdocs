@@ -16,4 +16,5 @@ python:
 # Don't build any extra formats
 formats:
     - pdf
+    - linkcheck
 
