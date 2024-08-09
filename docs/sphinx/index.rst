@@ -20,3 +20,14 @@ Contents
   :maxdepth: 2
 
   GitHub Repository <https://github.com/sdss/idlspec2d>
+
+.. toctree::
+  :caption: Support
+  :maxdepth: 2
+
+  SDSS HOME <https://www.sdss.org/>
+  SDSS Helpdesk  <https://www.sdss.org/dr18/help/>
+  SDSS SVN <https://svn.sdss.org/data/sdss/>
+  SDSS GitHub <https://github.com/sdss/>
+  SDSS SAS <https://data.sdss.org/sas/>
+  SDSS-Access <https://sdss-access.readthedocs.io/en/latest/intro.html>
