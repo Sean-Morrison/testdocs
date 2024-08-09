@@ -12,13 +12,7 @@ Contents
   intro
   Running the BOSS DRP Catchup <catchup>
   Running the BOSS DRP Daily <daily>
-
-.. only:: latex or epub or htmlzip or singlehtml
-
-   .. toctree::
-      sos
-
-.. toctree::
+  sos
   Dependencies
   doc
 
