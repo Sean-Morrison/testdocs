@@ -14,3 +14,9 @@ Contents
     sos
     Dependencies
     doc
+
+.. toctree::
+  :caption: Development
+  :maxdepth: 2
+
+  GitHub Repository <https://github.com/sdss/idlspec2d>
