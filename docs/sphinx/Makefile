@@ -17,8 +17,10 @@ help:
 
 .PHONY: help Makefile
 
+TAGS = $(subst html,html,$(subst singlehtml,singlehtml,$(subst latexpdf,pdf,$(subst epub,epub,$(subst man,man,$(filter-out Makefile,$(MAKECMDGOALS)))))))
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@/Users/smorrison/opt/anaconda3/bin/python3.8 ../build_doc.py
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)  $(addprefix -t ,$(TAGS))
