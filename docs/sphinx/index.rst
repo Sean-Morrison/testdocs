@@ -11,7 +11,6 @@ Contents
     intro
     Running the BOSS DRP Catchup <catchup>
     Running the BOSS DRP Daily <daily>
-    sos
     Dependencies
     doc
 
