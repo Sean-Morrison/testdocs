@@ -107,7 +107,7 @@ language = "en"
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['sos.rst'] if not tags.has('html') else []
 exclude_patterns.extend(['_build', 'Thumbs.db', '.DS_Store'])
-
+print(tags.__dict__)
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
 default_role = 'py:obj'
