@@ -27,7 +27,8 @@ Version 6.2.0 is recommended for use with DR18 data. To retrieve this tag use `g
 ### Prerequisites
 You do not need to install IDL, buy a license, etc. to install idlutils. However, you do need a copy of IDL’s export.h file. If you already have IDL installed, set the environment variable IDL_DIR to the directory containing the external directory. The external directory should contain the export.h file. If you do not have IDL installed, but do have an export.h file, then you can place that file in a directory called external then place that directory in any directory you want and set IDL_DIR to the directory containing external.
 
-You need both a C compiler and a Fortran compiler.
+> [!NOTE]
+> You need both a C compiler and a Fortran compiler.
 
 If you want to build the documentation, you must have IDL installed, and the executable idl must live somewhere in your PATH. Note that some IDL installations define the executable idl as a shell alias, and thus it will not be in your PATH.
 
