@@ -7,14 +7,24 @@ This is the Sphinx documentation for the SDSS product idlspec2d
 Contents
 ^^^^^^^^
 
+.. only:: not html
 
-.. toctree::
-  intro
-  Running the BOSS DRP Catchup <catchup>
-  Running the BOSS DRP Daily <daily>
-  sos
-  Dependencies
-  doc
+   .. toctree::
+      intro
+      Running the BOSS DRP Catchup <catchup>
+      Running the BOSS DRP Daily <daily>
+      sos
+      Dependencies
+      doc
+
+.. only:: html
+
+   .. toctree::
+      intro
+      Running the BOSS DRP Catchup <catchup>
+      Running the BOSS DRP Daily <daily>
+      Dependencies
+      doc
 
 .. toctree::
    :caption: Development
