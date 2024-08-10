@@ -106,7 +106,7 @@ language = "en"
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 if 'html' in sys.argv:
-    tag.add('html')
+    tags.add('html')
 
 exclude_patterns = ['sos.rst'] if tags.has('html') else []
 exclude_patterns.extend(['_build', 'Thumbs.db', '.DS_Store'])
