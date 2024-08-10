@@ -12,7 +12,7 @@
 # type: ignore
 
 import os
-
+import sys
 from pkg_resources import parse_version
 
 
@@ -108,6 +108,7 @@ language = "en"
 exclude_patterns = ['sos.rst'] if tags.has('html') else []
 exclude_patterns.extend(['_build', 'Thumbs.db', '.DS_Store'])
 print(tags.__dict__)
+print(sys.argv)
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
 default_role = 'py:obj'
