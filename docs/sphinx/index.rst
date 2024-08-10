@@ -7,7 +7,7 @@ This is the Sphinx documentation for the SDSS product idlspec2d
 Contents
 ^^^^^^^^
 
-.. only:: not html
+.. only:: not nosos
 
    .. toctree::
       intro
@@ -17,7 +17,7 @@ Contents
       Dependencies
       doc
 
-.. only:: html
+.. only:: nosos
 
    .. toctree::
       intro
