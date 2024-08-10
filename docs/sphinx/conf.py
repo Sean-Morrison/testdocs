@@ -182,10 +182,30 @@ ultimate_replacements = {
     "|SOS_HOST|" : 'sdss5-bhm'
 }
 
+# The registration function
+from furo.navigation import get_navigation_tree
+def setup_sidebarTOC(app, pagename, templatename, context, doctree):
+    # The template function
+    def sidebarTOC(context: Dict[str, Any]) -> str:
+    # The navigation tree, generated from the sphinx-provided ToC tree.
+        if "toctree" in context:
+            toctree = context["toctree"]
+            toctree_html = toctree(
+                collapse=False,
+                titles_only=True,
+                maxdepth=-1,
+                includehidden=False,
+            )
+        else:
+            toctree_html = ""
+    return get_navigation_tree(toctree_html)
+    context['sidebarTOC'] = sidebarTOC
+
+
 def setup(app):
    app.add_config_value('ultimate_replacements', {}, True)
    app.connect('source-read', ultimateReplace)
-
+   app.connect("html-page-context", setup_sidebarTOC)
 
 highlight_options = {'stripall': True}
 
