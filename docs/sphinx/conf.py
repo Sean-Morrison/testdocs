@@ -198,7 +198,7 @@ def setup_sidebarTOC(app, pagename, templatename, context, doctree):
             )
         else:
             toctree_html = ""
-    return get_navigation_tree(toctree_html)
+        return get_navigation_tree(toctree_html)
     context['sidebarTOC'] = sidebarTOC
 
 
