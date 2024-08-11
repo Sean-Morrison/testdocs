@@ -1,4 +1,4 @@
-<div class="sidebar-tree">
+<!--<div class="sidebar-tree">
    <ul>
       <li class="toctree-l1"><a class="reference internal" href="intro.html">IDLspec2D: The SDSS BOSS Data Reduction Pipeline</a></li>
       <li class="toctree-l1"><a class="reference internal" href="catchup.html">Running the BOSS DRP Catchup</a></li>
@@ -19,4 +19,25 @@
       <li class="toctree-l1"><a class="reference external" href="https://data.sdss.org/sas/">SDSS SAS</a></li>
       <li class="toctree-l1"><a class="reference external" href="https://sdss-access.readthedocs.io/en/latest/intro.html">SDSS-Access</a></li>
    </ul>
+</div>-->
+
+{% set toctree_contents = toctree("index", maxdepth=1, includehidden=True, titles_only=True) %}
+{% set toctree_development = toctree("index", maxdepth=1, includehidden=True, titles_only=True, captions=["Development"]) %}
+{% set toctree_support = toctree("index", maxdepth=1, includehidden=True, titles_only=True, captions=["Support"]) %}
+
+<div class="sidebar-tree">
+    {% if 'not nosos' in builder.tags %}
+        <h3>{{ _("Contents") }}</h3>
+        {{ toctree_contents }}
+    {% elif 'nosos' in builder.tags %}
+        <h3>{{ _("Contents") }}</h3>
+        {{ toctree_contents }}
+    {% endif %}
+    
+    <h3>{{ _("Development") }}</h3>
+    {{ toctree_development }}
+
+    <h3>{{ _("Support") }}</h3>
+    {{ toctree_support }}
 </div>
+
