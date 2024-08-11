@@ -3,6 +3,7 @@
 {% set toctree_support = toctree(includehidden=True, maxdepth=2, titles_only=True) %} -->
 
 <div class="sidebar-tree">
+{builder.tags}
     {% if 'not nosos' in builder.tags or 'nosos' in builder.tags %}
         <h3>{{ _("Contents") }}</h3>
         {{ toctree_contents }}
