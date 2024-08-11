@@ -198,9 +198,8 @@ def setup_sidebarTOC(app, pagename, templatename, context, doctree):
             )
         else:
             toctree_html = ""
-        print(type(toctree_html))
         toctree_html = toctree_html.split('\n')
-        if 'nosos' in build.tags:
+        if 'nosos' in tags:
             toctree_html = [x for x in toctree_html if 'sos.html' not in x]
         seen = set()
         unique_lst = []
