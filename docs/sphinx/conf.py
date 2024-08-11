@@ -340,6 +340,8 @@ elif sphinx_template == 'alabaster':
 elif sphinx_template == 'furo':
     html_theme = "furo"
     html_theme_options = {"top_of_page_button": None}
+    html_context: Dict[str, Any] = {}
+
     html_context['display_github'] = True
     html_context["current_version"] = "latest"
     html_context["display_github"] = True
