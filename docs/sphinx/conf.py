@@ -198,7 +198,8 @@ def setup_sidebarTOC(app, pagename, templatename, context, doctree):
             )
         else:
             toctree_html = ""
-        print(toctree_html)
+        print(type(toctree_html))
+        toctree_html = [x for x in toctree if 'sos.html' not in x]
         return toctree_html
     context['sidebarTOC'] = sidebarTOC(context)
 
