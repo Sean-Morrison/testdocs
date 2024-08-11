@@ -10,6 +10,9 @@ Contents
 .. only:: not nosos
 
    .. toctree::
+      :caption: Contents
+      :titlesonly:
+
       intro
       Running the BOSS DRP Catchup <catchup>
       Running the BOSS DRP Daily <daily>
@@ -20,6 +23,9 @@ Contents
 .. only:: nosos
 
    .. toctree::
+      :caption: Contents
+      :titlesonly:
+
       intro
       Running the BOSS DRP Catchup <catchup>
       Running the BOSS DRP Daily <daily>
@@ -29,12 +35,14 @@ Contents
 .. toctree::
    :caption: Development
    :maxdepth: 2
+   :titlesonly:
 
    GitHub Repository <https://github.com/sdss/idlspec2d>
 
 .. toctree::
    :caption: Support
    :maxdepth: 2
+   :titlesonly:
 
    SDSS HOME <https://www.sdss.org/>
    SDSS Helpdesk  <https://www.sdss.org/dr18/help/>
