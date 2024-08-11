@@ -1,9 +1,14 @@
-    {% set toctree_contents = toctree(includehidden=True, maxdepth=2, titles_only=True) %}
+{% set toctree_contents_nosos = toctree(includehidden=True, maxdepth=2, titles_only=True, glob="sos") %}
+{% set toctree_contents_not_nosos = toctree(includehidden=True, maxdepth=2, titles_only=True, glob="!sos") %}
+
 <div class="sidebar-tree">
     {% if 'nosos' in builder.tags %}
         <h3>{{ _("Contents") }}</h3>
-        {{ toctree_contents or "No content available" }}
+        {{ toctree_contents_nosos }}
+    {% else %}
+        <h3>{{ _("Contents") }}</h3>
+        {{ toctree_contents_not_nosos }}  <!-- Default or fallback content -->
     {% endif %}
-    {{"No content available" }}
-    {{ builder.tags }}
 </div>
+
+
