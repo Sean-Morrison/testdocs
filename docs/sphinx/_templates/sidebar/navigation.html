@@ -19,11 +19,15 @@
       <li class="toctree-l1"><a class="reference external" href="https://data.sdss.org/sas/">SDSS SAS</a></li>
       <li class="toctree-l1"><a class="reference external" href="https://sdss-access.readthedocs.io/en/latest/intro.html">SDSS-Access</a></li>
    </ul>
-</div>-->
-
+</div>
 {% set toctree_contents = toctree("index", maxdepth=1, includehidden=True, titles_only=True) %}
 {% set toctree_development = toctree("index", maxdepth=1, includehidden=True, titles_only=True, captions=["Development"]) %}
-{% set toctree_support = toctree("index", maxdepth=1, includehidden=True, titles_only=True, captions=["Support"]) %}
+{% set toctree_support = toctree("index", maxdepth=1, includehidden=True, titles_only=True, captions=["Support"]) %}-->
+
+
+{% set toctree_contents = toctree("index") %}
+{% set toctree_development = toctree("index") %}
+{% set toctree_support = toctree("index") %}
 
 <div class="sidebar-tree">
     {% if 'not nosos' in builder.tags %}
