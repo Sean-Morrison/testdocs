@@ -1,17 +1,6 @@
-{% set toctree_contents = toctree(includehidden=True, maxdepth=2, titles_only=True) %}
-<!-- {% set toctree_development = toctree(includehidden=True, maxdepth=2, titles_only=True) %}
-{% set toctree_support = toctree(includehidden=True, maxdepth=2, titles_only=True) %} -->
-
+    {% set toctree_contents = toctree(includehidden=True, maxdepth=2, titles_only=True) %}
 <div class="sidebar-tree">
-{builder.tags}
-    {% if 'not nosos' in builder.tags or 'nosos' in builder.tags %}
-        <h3>{{ _("Contents") }}</h3>
-        {{ toctree_contents }}
-    {% endif %}
-
-<!--     <h3>{{ _("Development") }}</h3>
-    {{ toctree_development }}
-
-    <h3>{{ _("Support") }}</h3>
-    {{ toctree_support }} -->
+    <h3>{{ _("Contents") }}</h3>
+    {{ toctree_contents or "No content available" }}
+    {{ builder.tags }}
 </div>
