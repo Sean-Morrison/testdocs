@@ -1,3 +1,8 @@
+    {% set toctree_contents = toctree() %}
+    {% set toctree_development = toctree() %}
+    {% set toctree_support = toctree() %}
+
+
 <div class="sidebar-tree">
     {% if 'not nosos' in builder.tags %}
         <h3>{{ _("Contents") }}</h3>
