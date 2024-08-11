@@ -10,7 +10,6 @@ Contents
 .. only:: not nosos
 
    .. toctree::
-      :caption: Contents
       :titlesonly:
 
       intro
@@ -23,7 +22,6 @@ Contents
 .. only:: nosos
 
    .. toctree::
-      :caption: Contents
       :titlesonly:
 
       intro
