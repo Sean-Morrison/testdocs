@@ -204,7 +204,8 @@ def setup_sidebarTOC(app, pagename, templatename, context, doctree):
             print(item)
             if item not in unique_lst:
                 unique_lst.append(item)
-                seen.add(item)
+                if item not in ['<ul>','</ul>','<ul class="current">']:
+                    seen.add(item)
         toctree_html = '\n'.join(unique_lst)
         print(toctree_html)
         return toctree_html
