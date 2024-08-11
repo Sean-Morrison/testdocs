@@ -1,6 +1,6 @@
-    {% set toctree_contents = toctree(includehidden=False, titles_only=True) %}
-    {% set toctree_development = toctree() %}
-    {% set toctree_support = toctree() %}
+    {% set toctree_contents = toctree(includehidden=True, titles_only=True) %}
+    {% set toctree_development = toctree(includehidden=True, maxdepth=2, titles_only=True,captions=["Development"]) %}
+    {% set toctree_support = toctree(includehidden=True, maxdepth=2, titles_only=True,captions=["Support"]) %}
 
 
 <div class="sidebar-tree">
