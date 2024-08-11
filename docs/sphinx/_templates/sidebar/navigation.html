@@ -1,6 +1,9 @@
     {% set toctree_contents = toctree(includehidden=True, maxdepth=2, titles_only=True) %}
 <div class="sidebar-tree">
-    <h3>{{ _("Contents") }}</h3>
-    {{ toctree_contents or "No content available" }}
+    {% if 'nosos' in builder.tags %}
+        <h3>{{ _("Contents") }}</h3>
+        {{ toctree_contents or "No content available" }}
+    {% endif %}
+    {{"No content available" }}
     {{ builder.tags }}
 </div>
