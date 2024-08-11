@@ -340,6 +340,13 @@ elif sphinx_template == 'alabaster':
 elif sphinx_template == 'furo':
     html_theme = "furo"
     html_theme_options = {"top_of_page_button": None}
+    html_context['display_github'] = True
+    html_context["current_version"] = "latest"
+    html_context["display_github"] = True
+    html_context["github_user"] = "Sean-Morrison/"
+    html_context["github_repo"] = "testdocs"
+    html_context["github_version"] = "main"
+    html_context["slug"] = "testdocs"
 html_title = "{0}'s Documentation".format(project)
 html_logo = "_static/sdssv_logo.png"
 html_favicon = "./_static/favicon_sdssv.ico"
