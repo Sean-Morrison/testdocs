@@ -106,13 +106,9 @@ language = "en"
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 if 'html' in sys.argv:
-    #tags.add('html')
     tags.add('nosos')
 
-exclude_patterns = ['sos.rst'] if tags.has('html') else []
-exclude_patterns.extend(['_build', 'Thumbs.db', '.DS_Store'])
-print(tags.__dict__)
-print(sys.argv)
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
 default_role = 'py:obj'
@@ -198,17 +194,19 @@ def setup_sidebarTOC(app, pagename, templatename, context, doctree):
             )
         else:
             toctree_html = ""
+        print(toctree_html)
         toctree_html = toctree_html.split('\n')
         if 'nosos' in tags:
             toctree_html = [x for x in toctree_html if 'sos.html' not in x]
         seen = set()
         unique_lst = []
         for item in toctree_html:
+            print(item)
             if item not in unique_lst:
                 unique_lst.append(item)
                 seen.add(item)
         toctree_html = '\n'.join(unique_lst)
-        
+        print(toctree_html)
         return toctree_html
     context['sidebarTOC'] = sidebarTOC(context)
 
